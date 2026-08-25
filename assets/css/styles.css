@@ -391,7 +391,7 @@ p{ margin:0 0 1rem; }
 html:has(.svc){ scroll-behavior:auto; }
 
 /* ---------- 17b. PAGE HERO ---------- */
-.page-hero{ position:relative; display:flex; align-items:flex-end; min-height:clamp(300px,44vw,460px); overflow:hidden; }
+.page-hero{ position:relative; display:flex; align-items:center; min-height:clamp(300px,44vw,460px); overflow:hidden; }
 .page-hero__media{
   position:absolute; inset:0;
   background:url("../images/band.jpg") center 40%/cover no-repeat;
