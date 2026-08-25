@@ -52,13 +52,15 @@ Press `Ctrl + C` in Terminal to stop the server.
 The site's first inner page. One page covering all eight domestic services —
 there is deliberately **no separate page per service**.
 
-- The header's **Domestic Roofing** item now opens a submenu of the 8 services.
-  On desktop it drops down on hover; in the mobile sandwich menu the caret
-  expands it. Every item jumps to that service's section on this page.
-- A **Jump to** row under the banner does the same thing for people who scroll.
-- Each section is a lead paragraph + photo, then the detail points as a
-  two-column tick list.
-- The homepage service cards now link through to their matching section.
+- A **Jump to** row under the banner links to all eight sections. The header
+  nav is flat — no dropdown.
+- Each section is three paragraphs of prose beside its photo, then four key
+  points as a two-column tick list.
+- **Two CTA bands** break the page up (after GRP and after Re-Roofs), and the
+  page ends with its own **Request a Quote** form — the same form as the
+  homepage, so it behaves identically.
+- The homepage service cards link through to their matching section, and both
+  footers carry a Domestic Roofing column.
 
 Section order and anchors:
 

@@ -2,7 +2,6 @@
    TECTUM ROOFING — main.js
    Small vanilla-JS enhancements only. No dependencies.
    - Mobile nav toggle
-   - Nav submenu (Domestic Roofing)
    - Sticky-header shadow on scroll
    - Scroll-reveal for .reveal elements
    - Demo contact-form handler (no backend)
@@ -26,42 +25,9 @@
         nav.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Open menu");
-        closeSubs();
       }
     });
   }
-
-  /* ---- Nav submenu (Domestic Roofing) ----
-     Desktop: CSS opens it on hover/focus; the caret button is a
-     keyboard/touch fallback. Mobile: caret is the only opener. */
-  var subToggles = document.querySelectorAll(".nav__sub-toggle");
-  Array.prototype.forEach.call(subToggles, function (btn) {
-    var item = btn.closest(".nav__item");
-    if (!item) { return; }
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      var open = item.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.setAttribute("aria-label", open ? "Hide domestic roofing services" : "Show domestic roofing services");
-    });
-  });
-
-  var closeSubs = function () {
-    Array.prototype.forEach.call(subToggles, function (btn) {
-      var item = btn.closest(".nav__item");
-      if (item) { item.classList.remove("is-open"); }
-      btn.setAttribute("aria-expanded", "false");
-      btn.setAttribute("aria-label", "Show domestic roofing services");
-    });
-  };
-
-  // Escape closes any open submenu; clicking outside the nav does too.
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { closeSubs(); }
-  });
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".nav__item--has-sub")) { closeSubs(); }
-  });
 
   /* ---- Sticky header shadow ---- */
   var header = document.getElementById("siteHeader");

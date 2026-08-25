@@ -371,82 +371,18 @@ p{ margin:0 0 1rem; }
 /* ============================================================
    17. INNER-PAGE STYLES  (added for domestic-roofing.html)
    ------------------------------------------------------------
-   a. Nav dropdown (desktop hover / mobile accordion)
-   b. Anchor scroll offset under the sticky header
-   c. Page hero + breadcrumb
-   d. Jump-link row
-   e. Service sections
-   f. CTA band
+   a. Anchor scroll offset under the sticky header
+   b. Page hero + breadcrumb
+   c. Jump-link row
+   d. Service sections
+   e. CTA band
    ============================================================ */
-
-/* ---------- 17a. NAV DROPDOWN ---------- */
-.nav__item{ position:relative; display:flex; align-items:center; gap:.25rem; }
-
-.nav__sub-toggle{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:26px; height:26px; padding:0; border:0; border-radius:50%;
-  background:transparent; color:var(--on-dark); cursor:pointer;
-  transition:transform .25s var(--ease), background .2s var(--ease), color .2s var(--ease);
-}
-.nav__sub-toggle:hover{ background:rgba(255,255,255,.12); color:#fff; }
-.nav__item.is-open > .nav__sub-toggle{ transform:rotate(180deg); }
-
-.nav__sub{
-  list-style:none; margin:0; padding:.5rem 0;
-  background:var(--olive-deep);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:var(--radius);
-  box-shadow:0 22px 40px -22px rgba(0,0,0,.75);
-}
-.nav__sub a{
-  display:block; padding:.6rem 1.25rem; font-size:.94rem; font-weight:600;
-  color:var(--on-dark-mut); white-space:nowrap;
-  border-left:3px solid transparent;
-  transition:color .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
-}
-.nav__sub a:hover{ color:#fff; background:rgba(255,255,255,.07); border-left-color:var(--brass); }
-
-/* Desktop: full-height nav item so the dropdown hangs off the header edge */
-@media (min-width:901px){
-  .nav{ align-self:stretch; }
-  .nav__item{ align-self:stretch; }
-  .nav__sub{
-    position:absolute; top:100%; left:0; z-index:60; min-width:230px;
-    opacity:0; visibility:hidden; transform:translateY(-8px);
-    transition:opacity .22s var(--ease), transform .22s var(--ease), visibility .22s;
-  }
-  .nav__item--has-sub:hover .nav__sub,
-  .nav__item--has-sub:focus-within .nav__sub,
-  .nav__item.is-open .nav__sub{
-    opacity:1; visibility:visible; transform:none;
-  }
-}
-
-/* Mobile: accordion inside the sandwich menu, collapsed by default */
-@media (max-width:900px){
-  .nav{ max-height:calc(100svh - 96px); overflow-y:auto; }
-  .nav__item{ display:block; position:static; }
-  .nav__item--has-sub > .nav__link{
-    display:inline-block; width:calc(100% - 46px); vertical-align:middle;
-  }
-  .nav__sub-toggle{
-    width:44px; height:44px; vertical-align:middle;
-    border-bottom:1px solid rgba(255,255,255,.08); border-radius:0;
-  }
-  .nav__sub{
-    display:none; background:transparent; border:0; box-shadow:none;
-    padding:.25rem 0 .5rem .9rem;
-  }
-  .nav__item.is-open .nav__sub{ display:block; }
-  .nav__sub a{ padding:.6rem 0; border-left:0; border-bottom:1px solid rgba(255,255,255,.06); }
-  .nav__sub a:hover{ background:transparent; }
-}
 
 /* Homepage service cards now link through to their section */
 .card__link{ display:block; color:inherit; }
 
-/* ---------- 17b. ANCHOR OFFSET (sticky header) ---------- */
-.svc[id], .cta-band[id]{ scroll-margin-top:clamp(104px,13vw,158px); }
+/* ---------- 17a. ANCHOR OFFSET (sticky header) ---------- */
+.svc[id], .contact[id]{ scroll-margin-top:clamp(104px,13vw,158px); }
 
 /* The service page is ~9,000px tall, so a "smooth" jump from the menu
    to section 8 crawls for several seconds and flashes through every
@@ -454,7 +390,7 @@ p{ margin:0 0 1rem; }
    sections; the homepage keeps its short smooth scrolls. */
 html:has(.svc){ scroll-behavior:auto; }
 
-/* ---------- 17c. PAGE HERO ---------- */
+/* ---------- 17b. PAGE HERO ---------- */
 .page-hero{ position:relative; display:flex; align-items:flex-end; min-height:clamp(300px,44vw,460px); overflow:hidden; }
 .page-hero__media{
   position:absolute; inset:0;
@@ -477,7 +413,7 @@ html:has(.svc){ scroll-behavior:auto; }
 .crumbs a:hover{ color:#fff; text-decoration:underline; }
 .crumbs span[aria-hidden]{ opacity:.5; margin:0 .35rem; }
 
-/* ---------- 17d. JUMP LINKS ---------- */
+/* ---------- 17c. JUMP LINKS ---------- */
 .jump{ background:var(--olive-deep); padding:1.5rem 0; }
 .jump__label{
   margin:0 0 .8rem; font-size:.72rem; font-weight:700; letter-spacing:.18em;
@@ -492,12 +428,12 @@ html:has(.svc){ scroll-behavior:auto; }
 }
 .jump__list a:hover{ background:var(--brass); border-color:var(--brass); color:#fff; transform:translateY(-2px); }
 
-/* ---------- 17e. SERVICE SECTIONS ---------- */
+/* ---------- 17d. SERVICE SECTIONS ---------- */
 .svc{ background:var(--paper); padding:clamp(3rem,7vw,5.5rem) 0; }
 .svc--alt{ background:var(--cream); }
 .svc + .svc{ border-top:1px solid var(--line); }
 
-.svc__grid{ display:grid; gap:clamp(1.75rem,4vw,3.5rem); align-items:center; margin-bottom:clamp(1.75rem,4vw,3rem); }
+.svc__grid{ display:grid; gap:clamp(1.75rem,4vw,3.5rem); align-items:start; margin-bottom:clamp(1.75rem,4vw,3rem); }
 @media (min-width:900px){
   .svc__grid{ grid-template-columns:.85fr 1fr; }
   .svc__grid--reverse .svc__media{ order:2; }
@@ -506,8 +442,9 @@ html:has(.svc){ scroll-behavior:auto; }
   width:100%; height:100%; aspect-ratio:4/3; object-fit:cover;
   border-radius:var(--radius); box-shadow:var(--shadow);
 }
-.svc__text h2{ margin-bottom:.6rem; }
-.svc__text p{ color:var(--muted); font-size:1.05rem; }
+.svc__text h2{ margin-bottom:.9rem; }
+.svc__text p{ color:var(--muted); }
+.svc__lead{ font-size:1.12rem; color:var(--ink) !important; }
 .svc__text .btn{ margin-top:.6rem; }
 
 .svc__points{
@@ -526,15 +463,22 @@ html:has(.svc){ scroll-behavior:auto; }
 }
 .svc--alt .svc__points{ border-top-color:#ded5c2; }
 
-/* ---------- 17f. CTA BAND ---------- */
-.cta-band{
-  background:var(--olive-darker); color:var(--on-dark);
-  padding:clamp(3rem,7vw,5rem) 0;
+/* ---------- 17e. CTA BREAKS ---------- */
+/* Full-bleed photo bands that split the eight services into groups
+   and give people a way out to the form at three points on the page. */
+.cta-break{
+  position:relative; overflow:hidden; text-align:center;
+  padding:clamp(3.5rem,8vw,6rem) 0;
 }
-.cta-band h2{ color:#fff; }
-.cta-band p{ color:var(--on-dark-mut); max-width:56ch; }
-.cta-band__inner{ display:grid; gap:clamp(2rem,5vw,4rem); align-items:center; }
-@media (min-width:900px){ .cta-band__inner{ grid-template-columns:1.2fr .8fr; } }
-.cta-band__actions{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.75rem; }
-.cta-band .contact__details{ margin-top:0; }
-@media (max-width:560px){ .cta-band__actions .btn{ flex:1 1 auto; } }
+.cta-break__media{ position:absolute; inset:0; background-position:center; background-size:cover; background-repeat:no-repeat; }
+.cta-break--a .cta-break__media{ background-image:url("../images/hero.jpg"); background-position:center 35%; }
+.cta-break--b .cta-break__media{ background-image:url("../images/about.jpg"); background-position:center 40%; }
+.cta-break__overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(0deg, rgba(30,32,20,.9), rgba(44,46,28,.78));
+}
+.cta-break__inner{ position:relative; max-width:720px; }
+.cta-break h2{ color:#fff; }
+.cta-break p{ color:var(--on-dark); margin:0; }
+.cta-break__actions{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1.9rem; }
+@media (max-width:560px){ .cta-break__actions .btn{ flex:1 1 auto; } }

@@ -19,9 +19,9 @@
 
   <!-- ============================================================
        HEADER / NAV
-       "Domestic Roofing" links to domestic-roofing.html and carries
-       a submenu of the 8 services, each jumping to its own section
-       on that page (no separate page per service, by design).
+       "Domestic Roofing" links to domestic-roofing.html, which covers
+       all 8 services (no separate page per service, by design). The
+       service cards below link straight to their section.
        PLACEHOLDER: "Commercial Roofing" and "Inspections & Surveys"
        have no pages yet — they still point at the services grid.
   ============================================================ -->
@@ -35,24 +35,7 @@
       <nav class="nav" id="primaryNav" aria-label="Primary">
         <a href="#top" class="nav__link">Home</a>
 
-        <div class="nav__item nav__item--has-sub" id="navDomestic">
-          <a href="domestic-roofing.html" class="nav__link">Domestic Roofing</a>
-          <button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="subDomestic"
-                  aria-label="Show domestic roofing services">
-            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <ul class="nav__sub" id="subDomestic" role="list">
-            <li><a href="domestic-roofing.html#felt-roofing">Felt Roofing</a></li>
-            <li><a href="domestic-roofing.html#slate-roofing">Slate Roofs</a></li>
-            <li><a href="domestic-roofing.html#grp-roofing">GRP Roofs</a></li>
-            <li><a href="domestic-roofing.html#roof-tiling">Tiled Roofs</a></li>
-            <li><a href="domestic-roofing.html#rubber-roofing">Rubber Roofing</a></li>
-            <li><a href="domestic-roofing.html#re-roofing">Re-Roofs</a></li>
-            <li><a href="domestic-roofing.html#leadwork">Leadwork</a></li>
-            <li><a href="domestic-roofing.html#upvc-plastic">uPVC &amp; Plastic Roofing</a></li>
-          </ul>
-        </div>
-
+        <a href="domestic-roofing.html" class="nav__link">Domestic Roofing</a>
         <a href="#services" class="nav__link">Commercial Roofing</a>
         <a href="#services" class="nav__link">Inspections &amp; Surveys</a>
         <a href="#contact" class="nav__link nav__link--cta">Contact Us</a>
