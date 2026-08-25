@@ -75,6 +75,26 @@ Section order and anchors:
 | 7 | Lead Roofing & Leadwork | `#leadwork` |
 | 8 | uPVC & Plastics | `#upvc-plastic` |
 
+## The Commercial Roofing page (`commercial-roofing.html`)
+
+The second inner page, built from the 366-word commercial brief.
+
+- **Banner**, then an intro block pairing the opening copy with a photo.
+- **Buildings We Work On** — the six property types from the copy as plain
+  typographic tiles (no photos needed).
+- **Commercial Roofing Systems** — the systems named in the copy as chips,
+  each linking to its full write-up on the domestic page.
+- A **CTA band**, then three alternating text/photo sections: accreditation
+  and compliance, inspections and repairs, and how the team works on site.
+- Ends with its own **Arrange a Professional Assessment** form, which adds
+  Company and Property Type fields to the standard one.
+
+Section anchors: `#overview`, `#buildings`, `#systems`, `#accreditation`,
+`#repairs`, `#working-with-us`, `#quote`.
+
+⚠️ Every photo on this page is a domestic job — there is no commercial
+photography in the asset folder yet. See `PLACEHOLDERS.md` item 19.
+
 ---
 
 ## Project structure
@@ -83,6 +103,7 @@ Section order and anchors:
 website/
 ├── index.html
 ├── domestic-roofing.html
+├── commercial-roofing.html
 ├── README.md
 └── assets/
     ├── css/styles.css
@@ -103,7 +124,7 @@ website/
 ## Adding more pages later
 Duplicate `domestic-roofing.html`, keep the same `<header>` and `<footer>`, and
 swap the sections. The CSS and JS are shared, so a new page needs no new files.
-`Commercial Roofing` and `Inspections & Surveys` are the obvious next two.
+`Inspections & Surveys` is the last one still missing.
 
 ---
 

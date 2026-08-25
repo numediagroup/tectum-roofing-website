@@ -16,7 +16,7 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 | 3 | **Font** | `assets/css/styles.css` · `:root` / `@font-face` | No brand font was in the assets folder, so I used **Manrope** (a clean, professional sans). If Tectum has an official typeface, send it and I'll swap it in. |
 | 4 | **Contact form has no backend** | `index.html` · line 235 · and `assets/js/main.js` · line 60 | Submitting just shows a "demo form" message. Before go-live it needs a real handler (Formspree, Netlify Forms, or an email endpoint). Tell me your preference. |
 | 5 | **Social media links** | `index.html` · footer · **line 287** | Facebook + Instagram icons currently link to `#` (nowhere). **Send me the real social URLs** (or say if there are none and I'll remove them). |
-| 6 | **Inner-page nav links** | `index.html` · header | ⚠️ PARTLY RESOLVED — **Domestic Roofing** now has its own page (`domestic-roofing.html`) covering all 8 services. **"Commercial Roofing"** and **"Inspections & Surveys"** still have no pages and continue to point at the homepage services grid. |
+| 6 | **Inner-page nav links** | `index.html` · header | ⚠️ NEARLY RESOLVED — **Domestic Roofing** and **Commercial Roofing** both have their own pages now. Only **"Inspections & Surveys"** is left without one; it still points at the homepage services grid. |
 
 ---
 
@@ -43,6 +43,18 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 | 17 | **CTA break copy is mine** | `domestic-roofing.html` · two CTA bands | Two photo CTA bands split the eight services (after GRP and after Re-Roofs). Nothing was supplied for these, so I wrote the headings and paragraphs: *"Not sure which system your roof needs?"* and *"Roof leaking? Talk to us today."* Both are marked `PLACEHOLDER` in the code — rewrite freely. |
 | 18 | **Your copy was regrouped into paragraphs** | `domestic-roofing.html` · all 8 sections | Your text arrived as ~15 standalone statements per service. To make it read as prose I grouped them into three paragraphs plus four key points, joining sentences with light connectives ("and", "it", "they"). No facts were added, removed or changed — but the wording is no longer identical line-for-line. Worth a read-through. |
 | 16 | **Hero image is reused** | `domestic-roofing.html` · page hero | The page banner reuses `assets/images/band.jpg` from the homepage divider. A dedicated domestic-roofing banner shot would be better. |
+
+---
+
+## 🟣 Commercial Roofing page (`commercial-roofing.html`) — added from your supplied copy
+
+| # | What it is | Where | What I need from you |
+|---|------------|-------|----------------------|
+| 19 | **Every photo is a domestic job** | `commercial-roofing.html` · banner + 4 sections | This is the biggest gap on the page. There is **no commercial photography anywhere in the asset folder**, so a page about offices, warehouses and schools is illustrated entirely with house roofs. Commercial job photos would lift this page more than anything else. Each one is marked `PLACEHOLDER: image` in the code. |
+| 20 | **"Double A Roofing" in the supplied copy** | throughout | Your text said "Double A Roofing" in four places. I wrote **Tectum Roofing**, consistent with the rest of the site (see items 2 and 12). |
+| 21 | **Section headings are my wording** | all section `<h2>`s | Your copy arrived as eight paragraphs with a single heading ("Commercial Roofing Services", which I kept). To break 366 words into a browsable page I wrote the rest: *Buildings We Work On*, *Commercial Roofing Systems*, *Fully Insured, Fully Accredited*, *Inspections, Repairs & Re-Roofing*, *Clear Communication, Start to Finish*, *Arrange a Professional Assessment*. The CTA band heading *"Leaks cost more than a repair does"* is also mine. All easy to change. |
+| 22 | **The systems chips link to the domestic page** | `commercial-roofing.html` · Commercial Roofing Systems | The seven system chips (felt, GRP, EPDM, tiling, slating, leadwork, re-roofs) link through to the full write-up of each on the domestic page, since your commercial copy names them but doesn't describe them. Tell me if you'd rather they didn't link at all, or if you want commercial-specific descriptions written. |
+| 23 | **"Flat roofing systems" has no chip of its own** | `commercial-roofing.html` · Commercial Roofing Systems | Your list of services opens with "flat roofing systems" and then names felt, GRP and rubber — which *are* the flat roofing systems. I left the phrase in the paragraph but didn't give it a separate chip, to avoid it looking like a ninth product. Say if you'd rather it had one. |
 
 ---
 

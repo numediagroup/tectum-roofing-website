@@ -482,3 +482,33 @@ html:has(.svc){ scroll-behavior:auto; }
 .cta-break p{ color:var(--on-dark); margin:0; }
 .cta-break__actions{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1.9rem; }
 @media (max-width:560px){ .cta-break__actions .btn{ flex:1 1 auto; } }
+
+/* ---------- 17f. COMMERCIAL PAGE ---------- */
+/* PLACEHOLDER: no commercial photography exists yet — the banner
+   reuses a domestic job photo. */
+.page-hero--commercial .page-hero__media{
+  background-image:url("../images/hero.jpg");
+  background-position:center 55%;
+}
+
+/* Property types — plain typographic tiles, no photos needed */
+.types{ list-style:none; margin:0; padding:0; display:grid; gap:1rem; }
+@media (min-width:600px){ .types{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:900px){ .types{ grid-template-columns:repeat(3,1fr); } }
+.types__item{
+  background:var(--paper); border:1px solid var(--line); border-left:4px solid var(--olive);
+  border-radius:var(--radius); padding:1.25rem 1.4rem;
+  font-weight:700; font-size:1.05rem; letter-spacing:-.01em;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-left-color .25s var(--ease);
+}
+.types__item:hover{ transform:translateY(-3px); box-shadow:var(--shadow); border-left-color:var(--brass); }
+
+/* Roofing systems — chips linking to the full write-up on the domestic page */
+.systems{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center; }
+.systems a{
+  display:inline-block; padding:.7rem 1.3rem; font-size:.95rem; font-weight:700;
+  color:var(--olive); background:var(--paper);
+  border:2px solid var(--line); border-radius:50px;
+  transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.systems a:hover{ background:var(--olive); border-color:var(--olive); color:#fff; transform:translateY(-2px); }
