@@ -114,6 +114,27 @@ Section anchors: `#overview`, `#survey-types`, `#what-we-check`,
 ⚠️ Every photo is an existing job shot standing in — there is no survey
 photography in the asset folder. See `PLACEHOLDERS.md` item 24.
 
+## The Contact page (`contact.html`)
+
+No copy was supplied for this page, so it is built from the contact details
+already on the site and nothing was invented.
+
+- **Banner**, then four cards: phone, WhatsApp, email and area covered.
+- The main **Tell Us About Your Roof** form, which asks for property type and
+  service so an enquiry arrives already sorted.
+- **Have a Look at What We Do** — three cards routing to the service pages.
+
+Nothing on the page states an address, opening hours or a company number,
+because none were provided. See `PLACEHOLDERS.md` items 29–33.
+
+---
+
+## The footer
+
+Every page carries an **identical** four-column footer: brand, Quick Links,
+Domestic Roofing, Get In Touch. Edit it in one page and paste it into the
+others, or the pages will drift apart again.
+
 ---
 
 ## Project structure
@@ -124,6 +145,7 @@ website/
 ├── domestic-roofing.html
 ├── commercial-roofing.html
 ├── inspections-surveys.html
+├── contact.html
 ├── README.md
 └── assets/
     ├── css/styles.css
