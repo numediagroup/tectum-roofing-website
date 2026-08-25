@@ -443,6 +443,9 @@ html:has(.svc){ scroll-behavior:auto; }
   width:100%; height:100%; aspect-ratio:4/3; object-fit:cover;
   border-radius:var(--radius); box-shadow:var(--shadow);
 }
+/* The "15+ years" graphic is square and has its own white margins —
+   cropping it to 4/3 cuts the badge in half. */
+.svc__media--square img{ aspect-ratio:1; }
 .svc__text h2{ margin-bottom:.9rem; }
 .svc__text p{ color:var(--muted); }
 .svc__lead{ font-size:1.12rem; color:var(--ink) !important; }
