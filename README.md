@@ -139,9 +139,9 @@ runs **no analytics** and loads **nothing** from third parties — which is why
 there is no cookie banner anywhere on the site. Adding analytics, a pixel, an
 embedded map or a hosted font would all make that section untrue.
 
-Six unresolved details are marked in the page with `legal__todo`, which renders
+Two unresolved details are marked in the page with `legal__todo`, which renders
 as a highlighted bracket so the page cannot be published looking finished. See
-`PLACEHOLDERS.md` items 35–40.
+`PLACEHOLDERS.md` items 37–40.
 
 ⚠️ Not legal advice, and not reviewed by a solicitor.
 
