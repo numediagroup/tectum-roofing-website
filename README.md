@@ -95,6 +95,25 @@ Section anchors: `#overview`, `#buildings`, `#systems`, `#accreditation`,
 ⚠️ Every photo on this page is a domestic job — there is no commercial
 photography in the asset folder yet. See `PLACEHOLDERS.md` item 19.
 
+## The Inspections & Surveys page (`inspections-surveys.html`)
+
+The third and final inner page, built from the 369-word survey brief.
+
+- **Banner**, then an intro block pairing the opening copy with a photo.
+- **The Surveys We Carry Out** — the four survey types from the copy as tiles.
+- **What We Check** — the eleven roofing elements as a three-column checklist.
+- A **CTA band** built around the "catch it early" argument, then three
+  alternating text/photo sections: commercial surveys, accreditation and
+  impartiality, and what the client receives afterwards.
+- Ends with its own **Arrange a Roof Inspection** form, which adds Survey
+  Type and Property Type selects to the standard one.
+
+Section anchors: `#overview`, `#survey-types`, `#what-we-check`,
+`#commercial-surveys`, `#accreditation`, `#your-report`, `#quote`.
+
+⚠️ Every photo is an existing job shot standing in — there is no survey
+photography in the asset folder. See `PLACEHOLDERS.md` item 24.
+
 ---
 
 ## Project structure
@@ -104,6 +123,7 @@ website/
 ├── index.html
 ├── domestic-roofing.html
 ├── commercial-roofing.html
+├── inspections-surveys.html
 ├── README.md
 └── assets/
     ├── css/styles.css
@@ -122,9 +142,9 @@ website/
 - Font: **Manrope** (self-hosted)
 
 ## Adding more pages later
-Duplicate `domestic-roofing.html`, keep the same `<header>` and `<footer>`, and
-swap the sections. The CSS and JS are shared, so a new page needs no new files.
-`Inspections & Surveys` is the last one still missing.
+Every item in the nav now has a page. To add another, duplicate the closest
+existing page, keep the same `<header>` and `<footer>`, and swap the sections.
+The CSS and JS are shared, so a new page needs no new files.
 
 ---
 

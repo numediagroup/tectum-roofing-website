@@ -16,7 +16,7 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 | 3 | **Font** | `assets/css/styles.css` · `:root` / `@font-face` | No brand font was in the assets folder, so I used **Manrope** (a clean, professional sans). If Tectum has an official typeface, send it and I'll swap it in. |
 | 4 | **Contact form has no backend** | `index.html` · line 235 · and `assets/js/main.js` · line 60 | Submitting just shows a "demo form" message. Before go-live it needs a real handler (Formspree, Netlify Forms, or an email endpoint). Tell me your preference. |
 | 5 | **Social media links** | `index.html` · footer · **line 287** | Facebook + Instagram icons currently link to `#` (nowhere). **Send me the real social URLs** (or say if there are none and I'll remove them). |
-| 6 | **Inner-page nav links** | `index.html` · header | ⚠️ NEARLY RESOLVED — **Domestic Roofing** and **Commercial Roofing** both have their own pages now. Only **"Inspections & Surveys"** is left without one; it still points at the homepage services grid. |
+| ~~6~~ | ~~Inner-page nav links~~ | `index.html` · header | ✅ RESOLVED — all four nav items now resolve to real pages: `domestic-roofing.html`, `commercial-roofing.html` and `inspections-surveys.html`. |
 
 ---
 
@@ -55,6 +55,18 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 | 21 | **Section headings are my wording** | all section `<h2>`s | Your copy arrived as eight paragraphs with a single heading ("Commercial Roofing Services", which I kept). To break 366 words into a browsable page I wrote the rest: *Buildings We Work On*, *Commercial Roofing Systems*, *Fully Insured, Fully Accredited*, *Inspections, Repairs & Re-Roofing*, *Clear Communication, Start to Finish*, *Arrange a Professional Assessment*. The CTA band heading *"Leaks cost more than a repair does"* is also mine. All easy to change. |
 | 22 | **The systems chips link to the domestic page** | `commercial-roofing.html` · Commercial Roofing Systems | The seven system chips (felt, GRP, EPDM, tiling, slating, leadwork, re-roofs) link through to the full write-up of each on the domestic page, since your commercial copy names them but doesn't describe them. Tell me if you'd rather they didn't link at all, or if you want commercial-specific descriptions written. |
 | 23 | **"Flat roofing systems" has no chip of its own** | `commercial-roofing.html` · Commercial Roofing Systems | Your list of services opens with "flat roofing systems" and then names felt, GRP and rubber — which *are* the flat roofing systems. I left the phrase in the paragraph but didn't give it a separate chip, to avoid it looking like a ninth product. Say if you'd rather it had one. |
+
+---
+
+## 🔵 Inspections & Surveys page (`inspections-surveys.html`) — added from your supplied copy
+
+| # | What it is | Where | What I need from you |
+|---|------------|-------|----------------------|
+| 24 | **No inspection photography** | banner + 4 sections | Same problem as the commercial page — every photo is an existing job shot standing in. Photos of someone actually surveying a roof (ladders, moisture meter, drone, clipboard) would suit this page far better. Marked `PLACEHOLDER: image` at each one. The banner also reuses a 1000px-wide photo, which is slightly soft when stretched across a large screen. |
+| 25 | **"Double A Roofing" in the supplied copy** | throughout | Said "Double A Roofing" in four places; written as **Tectum Roofing** to match the rest of the site. |
+| 26 | **Section headings are my wording** | all section `<h2>`s | Your copy carried one heading ("Roof Inspections & Surveys", which I kept). I wrote the rest: *The Surveys We Carry Out*, *What We Check*, *Commercial Roof Surveys*, *Clear, Unbiased Assessments*, *What You Get Afterwards*, *Arrange a Roof Inspection*, plus the CTA band line *"A survey now is cheaper than a roof later"*. |
+| 27 | **What does the client actually receive?** | "What You Get Afterwards" section | Your copy says you provide "a detailed overview of our findings". It doesn't say whether that's a **written report / PDF**, photographs, or a conversation on the day. That's usually a deciding factor for pre-purchase and insurance work, so it's worth spelling out. Tell me which it is and I'll add a line. |
+| 28 | **No price or turnaround given** | whole page | Nothing in the copy says what a survey costs, or whether it's free. For pre-purchase enquiries especially, people look for that. Happy to add it if you have a figure or a "from £X" line. |
 
 ---
 

@@ -512,3 +512,15 @@ html:has(.svc){ scroll-behavior:auto; }
   transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
 }
 .systems a:hover{ background:var(--olive); border-color:var(--olive); color:#fff; transform:translateY(-2px); }
+
+/* ---------- 17g. INSPECTIONS PAGE ---------- */
+/* PLACEHOLDER: no inspection/survey photography exists yet — the
+   banner reuses an existing job photo. */
+.page-hero--inspections .page-hero__media{
+  background-image:url("../images/intro-roof-repair.jpg");
+  background-position:center 45%;
+}
+
+/* The "What We Check" list is single words, not sentences — three
+   columns keeps it from stranding a lot of white space. */
+@media (min-width:760px){ .svc__points--compact{ grid-template-columns:repeat(3,1fr); } }
