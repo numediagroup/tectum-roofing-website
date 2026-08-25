@@ -83,6 +83,28 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 
 ---
 
+## ⚖️ Privacy Policy (`privacy-policy.html`) — read this before publishing
+
+**This policy is not legal advice and has not been reviewed by a solicitor.** It
+is written to describe what this website genuinely does, which is a better
+starting point than generic boilerplate, but somebody responsible for the
+business needs to check it before it goes live.
+
+Six details are missing. They are marked **visibly on the page itself** in
+highlighted brackets, so the page cannot be published looking finished while
+gaps remain. Search the code for `legal__todo`.
+
+| # | What it is | Where | What I need from you |
+|---|------------|-------|----------------------|
+| 35 | **Data controller identity** | "Who we are" | Registered company name, company number and registered address. If Tectum trades as a sole trader rather than a limited company, tell me and I'll word it differently. |
+| 36 | **Postal address** | "Contact us" | Same as item 30 — needed here for data-protection requests. |
+| 37 | **Retention periods** | "How long we keep it" | How long do you keep enquiries that don't become jobs? And records of completed work? Six years is the usual answer for the second one. |
+| 38 | **Hosting and form providers** | "Who we share it with" | The policy currently says the site is configured for Netlify. Confirm that's where it's going. And once the enquiry forms are actually connected to something (see item 4), that provider needs naming too. |
+| 39 | ⚠️ **The cookie section is true today — keep it true** | "Cookies and analytics" | Right now the site sets **no cookies**, uses **no analytics**, and loads **nothing** from third parties. That's why there's no cookie banner. The moment anyone adds Google Analytics, a Facebook pixel, an embedded Google Map or a hosted font, that paragraph becomes false and you will need a consent banner. Tell me before adding any of those and I'll handle both. |
+| 40 | **ICO registration** | not currently mentioned | Most businesses that process personal data must register with the ICO and pay the annual data protection fee. If Tectum is registered, send the number and I'll add it. If not, worth checking whether you need to be. |
+
+---
+
 ## ✅ Real details used (from the reference site — please still verify)
 
 These were taken from the reference site and treated as real. Worth a quick check:

@@ -310,6 +310,10 @@ p{ margin:0 0 1rem; }
 }
 .socials a:hover{ background:var(--brass); transform:translateY(-2px); }
 .footer__bar{ border-top:1px solid rgba(255,255,255,.12); padding:1.25rem 0; }
+.footer__bar-inner{ display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; align-items:center; justify-content:space-between; }
+.footer__legal{ margin:0; font-size:.88rem; }
+.footer__legal a{ color:var(--on-dark-mut); transition:color .2s var(--ease); }
+.footer__legal a:hover{ color:#fff; text-decoration:underline; }
 .footer__bar p{ margin:0; font-size:.88rem; color:var(--on-dark-mut); }
 
 /* ---------- WhatsApp floating button ---------- */
@@ -578,3 +582,38 @@ a.contact-card__value:hover{ color:var(--olive); text-decoration:underline; }
 .route-card h3 a::after{ content:" \2192"; }
 .route-card h3 a:hover{ text-decoration:underline; }
 .route-card p{ margin:0; color:var(--muted); font-size:.96rem; }
+
+/* ---------- 17i. LEGAL PAGES ---------- */
+.legal-head{
+  background:var(--olive-darker); color:var(--on-dark);
+  padding:clamp(2.5rem,6vw,4rem) 0 clamp(2rem,5vw,3rem);
+}
+.legal-head__title{ color:#fff; margin:0 0 .5rem; font-size:clamp(2.1rem,4.5vw,3.2rem); }
+.legal-head__meta{
+  margin:0; color:var(--on-dark-mut); font-size:.9rem;
+  letter-spacing:.04em;
+}
+
+.legal{ background:var(--paper); }
+.legal__body{ max-width:760px; }
+.legal__intro{ font-size:1.12rem; color:var(--ink); }
+.legal h2{
+  font-size:clamp(1.35rem,2.2vw,1.7rem); margin:2.6rem 0 .8rem;
+  padding-top:1.6rem; border-top:1px solid var(--line);
+}
+.legal h2:first-of-type{ margin-top:2rem; }
+.legal h3{ font-size:1.08rem; color:var(--olive); margin:1.8rem 0 .5rem; }
+.legal p, .legal li{ color:var(--muted); }
+.legal strong{ color:var(--ink); }
+.legal ul{ margin:0 0 1rem; padding-left:1.3rem; }
+.legal li{ margin-bottom:.5rem; }
+.legal a{ color:var(--olive); text-decoration:underline; text-underline-offset:2px; }
+.legal a:hover{ color:var(--brass); }
+.legal__contact{ list-style:none; padding-left:0; }
+
+/* Unresolved details are marked visibly on purpose, so this page
+   cannot be published looking finished while gaps remain. */
+.legal__todo{
+  background:rgba(168,137,79,.16); border-bottom:2px dashed var(--brass);
+  color:var(--ink); font-weight:600; padding:.1em .35em; border-radius:2px;
+}
