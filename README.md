@@ -120,8 +120,8 @@ No copy was supplied for this page, so it is built from the contact details
 already on the site and nothing was invented.
 
 - **Banner**, then four cards: phone, WhatsApp, email and area covered.
-- **A Name You Can Trust** — client-supplied about copy, paired with the
-  `15+ years` graphic (shown square, since cropping it cuts the badge).
+- **A Name You Can Trust** — client-supplied about copy, as a centred
+  text-only column (no image).
 - The main **Tell Us About Your Roof** form, which asks for property type and
   service so an enquiry arrives already sorted.
 - **Have a Look at What We Do** — three cards routing to the service pages.
