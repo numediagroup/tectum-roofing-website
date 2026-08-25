@@ -446,8 +446,9 @@ html:has(.svc){ scroll-behavior:auto; }
 .svc__text h2{ margin-bottom:.9rem; }
 .svc__text p{ color:var(--muted); }
 .svc__lead{ font-size:1.12rem; color:var(--ink) !important; }
-/* Text-only section — centred column, text still reading left to right */
-.svc__text--narrow{ max-width:800px; margin-inline:auto; }
+/* Text-only section — centred column, centre-aligned */
+.svc__text--narrow{ max-width:800px; margin-inline:auto; text-align:center; }
+.svc__text--narrow .btn{ margin-inline:auto; }
 .svc__text .btn{ margin-top:.6rem; }
 
 .svc__points{
