@@ -19,10 +19,11 @@
 
   <!-- ============================================================
        HEADER / NAV
-       Nav links mirror the reference site. "Domestic Roofing",
-       "Commercial Roofing" and "Inspections & Surveys" are future
-       pages — they currently point to the services section.
-       PLACEHOLDER: nav links for future inner pages (see list)
+       "Domestic Roofing" links to domestic-roofing.html and carries
+       a submenu of the 8 services, each jumping to its own section
+       on that page (no separate page per service, by design).
+       PLACEHOLDER: "Commercial Roofing" and "Inspections & Surveys"
+       have no pages yet — they still point at the services grid.
   ============================================================ -->
   <header class="site-header" id="siteHeader">
     <div class="wrap header__inner">
@@ -33,7 +34,25 @@
 
       <nav class="nav" id="primaryNav" aria-label="Primary">
         <a href="#top" class="nav__link">Home</a>
-        <a href="#services" class="nav__link">Domestic Roofing</a>
+
+        <div class="nav__item nav__item--has-sub" id="navDomestic">
+          <a href="domestic-roofing.html" class="nav__link">Domestic Roofing</a>
+          <button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="subDomestic"
+                  aria-label="Show domestic roofing services">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__sub" id="subDomestic" role="list">
+            <li><a href="domestic-roofing.html#felt-roofing">Felt Roofing</a></li>
+            <li><a href="domestic-roofing.html#slate-roofing">Slate Roofs</a></li>
+            <li><a href="domestic-roofing.html#grp-roofing">GRP Roofs</a></li>
+            <li><a href="domestic-roofing.html#roof-tiling">Tiled Roofs</a></li>
+            <li><a href="domestic-roofing.html#rubber-roofing">Rubber Roofing</a></li>
+            <li><a href="domestic-roofing.html#re-roofing">Re-Roofs</a></li>
+            <li><a href="domestic-roofing.html#leadwork">Leadwork</a></li>
+            <li><a href="domestic-roofing.html#upvc-plastic">uPVC &amp; Plastic Roofing</a></li>
+          </ul>
+        </div>
+
         <a href="#services" class="nav__link">Commercial Roofing</a>
         <a href="#services" class="nav__link">Inspections &amp; Surveys</a>
         <a href="#contact" class="nav__link nav__link--cta">Contact Us</a>
@@ -106,36 +125,52 @@
 
         <ul class="cards cards--4" role="list">
           <li class="card reveal">
+            <a class="card__link" href="domestic-roofing.html#felt-roofing">
             <div class="card__media"><img src="assets/images/services/Felt-Roofing.jpg" alt="Felt roofing" width="680" height="510" loading="lazy"></div>
             <h3 class="card__title">Felt Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
+            <a class="card__link" href="domestic-roofing.html#grp-roofing">
             <div class="card__media"><img src="assets/images/services/GRP-Roofing.jpg" alt="GRP fibreglass roofing" width="680" height="510" loading="lazy"></div>
             <h3 class="card__title">GRP Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
+            <a class="card__link" href="domestic-roofing.html#leadwork">
             <div class="card__media"><img src="assets/images/services/Leadwork.jpg" alt="Roof leadwork" width="680" height="510" loading="lazy"></div>
             <h3 class="card__title">Leadwork</h3>
+            </a>
           </li>
           <li class="card reveal">
+            <a class="card__link" href="domestic-roofing.html#re-roofing">
             <div class="card__media"><img src="assets/images/services/Re-Roofing.jpg" alt="Re-roofing" width="680" height="510" loading="lazy"></div>
             <h3 class="card__title">Re-Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
+            <a class="card__link" href="domestic-roofing.html#roof-tiling">
             <div class="card__media"><img src="assets/images/services/Roof-Tiling.jpg" alt="Roof tiling" width="680" height="510" loading="lazy"></div>
             <h3 class="card__title">Roof Tiling</h3>
+            </a>
           </li>
           <li class="card reveal">
+            <a class="card__link" href="domestic-roofing.html#rubber-roofing">
             <div class="card__media"><img src="assets/images/services/Rubber-Roofing.jpg" alt="Rubber roofing" width="680" height="510" loading="lazy"></div>
             <h3 class="card__title">Rubber Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
+            <a class="card__link" href="domestic-roofing.html#slate-roofing">
             <div class="card__media"><img src="assets/images/services/Slate-Roofing.jpg" alt="Slate roofing" width="680" height="510" loading="lazy"></div>
             <h3 class="card__title">Slate Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
+            <a class="card__link" href="domestic-roofing.html#upvc-plastic">
             <div class="card__media"><img src="assets/images/services/uPVC-Plastic-Roofing.jpg" alt="uPVC and plastic roofing" width="680" height="510" loading="lazy"></div>
             <h3 class="card__title">uPVC &amp; Plastic Roofing</h3>
+            </a>
           </li>
         </ul>
       </div>
@@ -299,7 +334,7 @@
         <h4>Quick Links</h4>
         <ul role="list">
           <li><a href="#top">Home</a></li>
-          <li><a href="#services">Domestic Roofing</a></li>
+          <li><a href="domestic-roofing.html">Domestic Roofing</a></li>
           <li><a href="#services">Commercial Roofing</a></li>
           <li><a href="#services">Inspections &amp; Surveys</a></li>
           <li><a href="#contact">Contact Us</a></li>

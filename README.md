@@ -47,11 +47,40 @@ Press `Ctrl + C` in Terminal to stop the server.
 
 ---
 
+## The Domestic Roofing page (`domestic-roofing.html`)
+
+The site's first inner page. One page covering all eight domestic services —
+there is deliberately **no separate page per service**.
+
+- The header's **Domestic Roofing** item now opens a submenu of the 8 services.
+  On desktop it drops down on hover; in the mobile sandwich menu the caret
+  expands it. Every item jumps to that service's section on this page.
+- A **Jump to** row under the banner does the same thing for people who scroll.
+- Each section is a lead paragraph + photo, then the detail points as a
+  two-column tick list.
+- The homepage service cards now link through to their matching section.
+
+Section order and anchors:
+
+| # | Section | Anchor |
+|---|---------|--------|
+| 1 | Felt Roofing | `#felt-roofing` |
+| 2 | Slating | `#slate-roofing` |
+| 3 | GRP (Fibreglass Roofing) | `#grp-roofing` |
+| 4 | Tiling | `#roof-tiling` |
+| 5 | Rubber Roofing (EPDM) | `#rubber-roofing` |
+| 6 | Re-Roofs | `#re-roofing` |
+| 7 | Lead Roofing & Leadwork | `#leadwork` |
+| 8 | uPVC & Plastics | `#upvc-plastic` |
+
+---
+
 ## Project structure
 
 ```
 website/
 ├── index.html
+├── domestic-roofing.html
 ├── README.md
 └── assets/
     ├── css/styles.css
@@ -70,9 +99,9 @@ website/
 - Font: **Manrope** (self-hosted)
 
 ## Adding more pages later
-The site is a single page by design, but it's set up to grow: duplicate
-`index.html`, keep the same `<header>` and `<footer>`, and update the nav `href`s
-(e.g. `domestic-roofing.html`). The CSS and JS are already shared and reusable.
+Duplicate `domestic-roofing.html`, keep the same `<header>` and `<footer>`, and
+swap the sections. The CSS and JS are shared, so a new page needs no new files.
+`Commercial Roofing` and `Inspections & Surveys` are the obvious next two.
 
 ---
 
