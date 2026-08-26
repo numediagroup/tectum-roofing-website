@@ -118,7 +118,10 @@ photography in the asset folder. See `PLACEHOLDERS.md` item 24.
 
 - **Banner**, then **Recent Projects** — the four projects from the old site,
   with their original titles.
-- **More of Our Work** — a 13-image gallery in a three-column grid.
+- **More of Our Work** — a 13-image gallery. Fixed row height plus column
+  spans, so the two wide tiles and eleven standard ones pack into exactly ten
+  rows with no gaps. Captions sit on the photo under a gradient scrim rather
+  than in a bar underneath.
 - A **CTA band** to close.
 
 All photography was pulled from the original WordPress site's media library and
@@ -164,6 +167,18 @@ as a highlighted bracket so the page cannot be published looking finished. See
 `PLACEHOLDERS.md` items 37–40.
 
 ⚠️ Not legal advice, and not reviewed by a solicitor.
+
+---
+
+## Cache busting
+
+`styles.css` and `main.js` are linked with a `?v=YYYYMMDD` query on every page.
+**Bump that version whenever you change either file**, otherwise browsers keep
+serving the old one and your changes appear not to have happened:
+
+```bash
+sed -i '' 's/?v=[0-9]\{8\}/?v=20260901/g' *.html
+```
 
 ---
 
