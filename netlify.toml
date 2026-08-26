@@ -14,3 +14,12 @@
   for = "/assets/images/*"
   [headers.values]
     Cache-Control = "public, max-age=2592000"
+
+# The repo root is the publish directory, so the internal notes were being
+# served as public pages — /PLACEHOLDERS.md returned 200 on the live site.
+# Keep the docs in the repo, off the web.
+[[redirects]]
+  from = "/*.md"
+  to = "/404.html"
+  status = 404
+  force = true
