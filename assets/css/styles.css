@@ -143,6 +143,14 @@ p{ margin:0 0 1rem; }
   /* cropped logo keeps its olive tile, so it blends into the olive header */
 }
 .nav{ display:flex; align-items:center; gap:clamp(1rem,2vw,2rem); }
+/* Six items plus the CTA is a lot of nav — tighten it up before the
+   mobile breakpoint rather than letting it wrap. */
+@media (min-width:901px) and (max-width:1240px){
+  .nav{ gap:1rem; }
+  .nav__link{ font-size:.9rem; }
+  .nav__link--cta{ padding:.45rem .85rem; }
+  .site-logo img{ height:clamp(64px,7vw,88px); }
+}
 .nav__link{
   position:relative; color:var(--on-dark); font-weight:600; font-size:.98rem; padding:.4rem 0;
   transition:color .2s var(--ease);
@@ -522,11 +530,12 @@ html:has(.svc){ scroll-behavior:auto; }
 .systems a:hover{ background:var(--olive); border-color:var(--olive); color:#fff; transform:translateY(-2px); }
 
 /* ---------- 17g. INSPECTIONS PAGE ---------- */
-/* PLACEHOLDER: no inspection/survey photography exists yet — the
-   banner reuses an existing job photo. */
+/* Pulled from the original site's media library: a moss-covered
+   pitched roof, i.e. exactly the kind of roof a survey is called out
+   to look at. */
 .page-hero--inspections .page-hero__media{
-  background-image:url("../images/intro-roof-repair.jpg");
-  background-position:center 45%;
+  background-image:url("../images/survey-roof.jpg");
+  background-position:center 55%;
 }
 
 /* The "What We Check" list is single words, not sentences — three
@@ -616,4 +625,30 @@ a.contact-card__value:hover{ color:var(--olive); text-decoration:underline; }
 .legal__todo{
   background:rgba(168,137,79,.16); border-bottom:2px dashed var(--brass);
   color:var(--ink); font-weight:600; padding:.1em .35em; border-radius:2px;
+}
+
+/* ---------- 17j. PROJECTS PAGE ---------- */
+.page-hero--projects .page-hero__media{
+  background-image:url("../images/intro-roof-repair.jpg");
+  background-position:center 55%;
+}
+
+.gallery{ list-style:none; margin:0; padding:0; display:grid; gap:1.5rem; }
+@media (min-width:640px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:980px){ .gallery{ grid-template-columns:repeat(3,1fr); } }
+
+.gallery__item{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .28s var(--ease), box-shadow .28s var(--ease);
+}
+.gallery__item:hover{ transform:translateY(-5px); box-shadow:var(--shadow); }
+.gallery__item img{
+  width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
+  transition:transform .5s var(--ease);
+}
+.gallery__item:hover img{ transform:scale(1.05); }
+.gallery__caption{
+  margin:0; padding:1rem 1.2rem; font-size:.95rem; font-weight:600;
+  color:var(--ink); border-top:3px solid var(--olive);
 }

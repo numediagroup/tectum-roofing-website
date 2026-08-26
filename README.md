@@ -114,6 +114,26 @@ Section anchors: `#overview`, `#survey-types`, `#what-we-check`,
 ⚠️ Every photo is an existing job shot standing in — there is no survey
 photography in the asset folder. See `PLACEHOLDERS.md` item 24.
 
+## The Previous Projects page (`previous-projects.html`)
+
+- **Banner**, then **Recent Projects** — the four projects from the old site,
+  with their original titles.
+- **More of Our Work** — a 13-image gallery in a three-column grid.
+- A **CTA band** to close.
+
+All photography was pulled from the original WordPress site's media library and
+**stored locally** in `assets/images/`. Nothing is hot-linked, so the gallery
+survives the old site going offline. Theme stock that shipped with the
+WordPress template (tunnels, bridges, generic construction) was deliberately
+excluded — only genuine job photos are used.
+
+Reachable from the nav, both footers, and the homepage "View Our Projects"
+button (which previously pointed at the contact form by mistake).
+
+See `PLACEHOLDERS.md` items 41–44.
+
+---
+
 ## The Contact page (`contact.html`)
 
 No copy was supplied for this page, so it is built from the contact details
@@ -165,6 +185,7 @@ website/
 ├── inspections-surveys.html
 ├── contact.html
 ├── privacy-policy.html
+├── previous-projects.html
 ├── README.md
 └── assets/
     ├── css/styles.css

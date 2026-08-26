@@ -62,7 +62,7 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 
 | # | What it is | Where | What I need from you |
 |---|------------|-------|----------------------|
-| 24 | **No inspection photography** | banner + 4 sections | Same problem as the commercial page — every photo is an existing job shot standing in. Photos of someone actually surveying a roof (ladders, moisture meter, drone, clipboard) would suit this page far better. Marked `PLACEHOLDER: image` at each one. The banner also reuses a 1000px-wide photo, which is slightly soft when stretched across a large screen. |
+| 24 | **No inspection photography** | 4 sections (banner now improved) | ⚠️ PARTLY IMPROVED — the **banner** now uses a photo recovered from the old site's media library: a moss-covered pitched roof, i.e. exactly the kind of roof a survey gets called out to. The four section photos are still existing job shots standing in. Photos of someone actually surveying (ladders, moisture meter, drone, clipboard) would still suit this page better. |
 | 25 | **"Double A Roofing" in the supplied copy** | throughout | Said "Double A Roofing" in four places; written as **Tectum Roofing** to match the rest of the site. |
 | 26 | **Section headings are my wording** | all section `<h2>`s | Your copy carried one heading ("Roof Inspections & Surveys", which I kept). I wrote the rest: *The Surveys We Carry Out*, *What We Check*, *Commercial Roof Surveys*, *Clear, Unbiased Assessments*, *What You Get Afterwards*, *Arrange a Roof Inspection*, plus the CTA band line *"A survey now is cheaper than a roof later"*. |
 | 27 | **What does the client actually receive?** | "What You Get Afterwards" section | Your copy says you provide "a detailed overview of our findings". It doesn't say whether that's a **written report / PDF**, photographs, or a conversation on the day. That's usually a deciding factor for pre-purchase and insurance work, so it's worth spelling out. Tell me which it is and I'll add a line. |
@@ -102,6 +102,32 @@ looking finished while gaps remain. Search the code for `legal__todo`.
 | 38 | **Hosting provider** | "Who we share it with" | The form and email provider bullet has been removed as requested. Still open: the policy says the site is configured for Netlify, whose servers may sit outside the UK. Confirm that's where it's going and I'll state it plainly. Note that if the enquiry forms are later wired to a third party (see item 4), that provider will need adding back. |
 | 39 | ⚠️ **The cookie section is true today — keep it true** | "Cookies and analytics" | Right now the site sets **no cookies**, uses **no analytics**, and loads **nothing** from third parties. That's why there's no cookie banner. The moment anyone adds Google Analytics, a Facebook pixel, an embedded Google Map or a hosted font, that paragraph becomes false and you will need a consent banner. Tell me before adding any of those and I'll handle both. |
 | 40 | **ICO registration** | not currently mentioned | Most businesses that process personal data must register with the ICO and pay the annual data protection fee. If Tectum is registered, send the number and I'll add it. If not, worth checking whether you need to be. |
+
+---
+
+## 📸 Previous Projects page (`previous-projects.html`)
+
+Built from the original WordPress site's media library at
+`numediag35.sg-host.com`. Every image was **downloaded and stored locally** in
+`assets/images/` — nothing is hot-linked, so the gallery will not break if the
+old site is taken down.
+
+**What was actually there.** The old media library holds 121 items, but most of
+it is WordPress theme furniture — icons, logos, background graphics, and stock
+photos of tunnels, bridges, harbour cranes and men with chainsaws that came with
+the template. I went through them and used **only genuine Tectum job photos**.
+None of the theme stock is presented as your work.
+
+Only **two** real job photos existed that weren't already in this repo. Both are
+now saved locally: a felt flat roof over a bay and porch, and a moss-covered
+pitched roof (now the Inspections banner — see item 24).
+
+| # | What it is | Where | What I need from you |
+|---|------------|-------|----------------------|
+| 41 | **Captions describe, they don't record** | gallery | The old site carried no project details — no dates, locations, client names or job descriptions. So each caption just says what the photo shows ("Slate roof with roof windows", "Re-roof, stripped to the rafters"). If you can tell me what any of these jobs actually were, real captions would make this page far stronger. |
+| 42 | ⚠️ **This is all the photography that exists** | whole page | The gallery necessarily reuses images that already appear elsewhere on the site, because 15 job photos is the entire stock. A projects page is the one page that really benefits from fresh, plentiful photos — a phone camera on the next few jobs would fix this faster than anything else. |
+| 43 | **A house number is visible** | gallery · "Felt flat roof over a bay and porch" | The front door in that photo shows the number **43b**. It was already public on the old site so this isn't new exposure, but it is a customer's property. Say the word and I'll crop it out or drop the photo. |
+| 44 | **Four project titles are real, descriptions are not** | "Recent Projects" | The four titles (Tiling Project, Felt Roofing, New Roofing, Roof Repairs) come from your old site. The one-line descriptions under them are still my invented copy — same as item 7. |
 
 ---
 
