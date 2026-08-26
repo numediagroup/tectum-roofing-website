@@ -18,8 +18,18 @@
 # The repo root is the publish directory, so the internal notes were being
 # served as public pages — /PLACEHOLDERS.md returned 200 on the live site.
 # Keep the docs in the repo, off the web.
+#
+# NOTE: these must be listed one by one. Netlify only supports a splat at the
+# END of a path, so "/*.md" matches nothing and fails silently. If you add
+# another markdown file at the repo root, add a rule for it here too.
 [[redirects]]
-  from = "/*.md"
+  from = "/PLACEHOLDERS.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
   to = "/404.html"
   status = 404
   force = true

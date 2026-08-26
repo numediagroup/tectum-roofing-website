@@ -174,6 +174,18 @@ finished while a detail is outstanding.
 
 ---
 
+## Internal docs are blocked from the web
+
+The publish directory is the repo root, so every file is served — `README.md`
+and `PLACEHOLDERS.md` were readable at `/README.md` and `/PLACEHOLDERS.md` on
+the live site. `netlify.toml` now returns 404 for both.
+
+They have to be listed **one per rule**. Netlify only supports a splat at the
+end of a path, so `from = "/*.md"` matches nothing and fails silently without
+any error. Add a rule for any new markdown file at the repo root.
+
+---
+
 ## Cache busting
 
 `styles.css` and `main.js` are linked with a `?v=YYYYMMDD` query on every page.
