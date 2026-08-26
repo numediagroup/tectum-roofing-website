@@ -162,9 +162,13 @@ runs **no analytics** and loads **nothing** from third parties — which is why
 there is no cookie banner anywhere on the site. Adding analytics, a pixel, an
 embedded map or a hosted font would all make that section untrue.
 
-Two unresolved details are marked in the page with `legal__todo`, which renders
-as a highlighted bracket so the page cannot be published looking finished. See
-`PLACEHOLDERS.md` items 37–40.
+No blanks remain — the page reads as a finished document. Two statements are
+assumptions rather than confirmed facts (six-year retention, and Netlify as the
+host); both are flagged in `PLACEHOLDERS.md` items 37–38.
+
+The `legal__todo` class is still available: wrap any future gap in it and it
+renders as a highlighted bracket, so the page can't be published looking
+finished while a detail is outstanding.
 
 ⚠️ Not legal advice, and not reviewed by a solicitor.
 

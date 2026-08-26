@@ -90,16 +90,16 @@ is written to describe what this website genuinely does, which is a better
 starting point than generic boilerplate, but somebody responsible for the
 business needs to check it before it goes live.
 
-**Two** details are still missing (down from six). They are marked **visibly on
-the page itself** in highlighted brackets, so the page cannot be published
-looking finished while gaps remain. Search the code for `legal__todo`.
+**No blanks are left** — the page reads as a finished document. Two statements
+below are my assumptions rather than things you confirmed. Both are safe
+defaults, but glance at them.
 
 | # | What it is | Where | What I need from you |
 |---|------------|-------|----------------------|
 | ~~35~~ | ~~Data controller identity~~ | "Who we are" | ✅ RESOLVED — the policy now names **Tectum Roofing** as the data controller, with no company number and no registered address. |
 | ~~36~~ | ~~Postal address~~ | "Contact us" | ✅ RESOLVED — no address published. Data-protection requests come in by email or phone. |
-| 37 | **Retention — completed work only** | "How long we keep it" | ⚠️ HALF RESOLVED — enquiries that don't lead to work are now stated as kept **until the enquiry is closed**, then deleted. Still open: how long you keep records of **jobs you actually did**. This can't be "until the enquiry is closed", because HMRC normally requires financial records to be kept for six years, and insurers and warranties often want longer. Give me a figure and I'll drop it in. |
-| 38 | **Hosting provider** | "Who we share it with" | The form and email provider bullet has been removed as requested. Still open: the policy says the site is configured for Netlify, whose servers may sit outside the UK. Confirm that's where it's going and I'll state it plainly. Note that if the enquiry forms are later wired to a third party (see item 4), that provider will need adding back. |
+| 37 | ⚠️ **Retention: six years — my assumption** | "How long we keep it" | The page now states that records of completed jobs are kept for **six years from the end of the work**, then deleted. Nobody told me that figure — I used it because it matches what HMRC requires for business records and the window in which a claim about the work could be brought. It is the standard answer for a UK trade business. If you actually keep things longer (warranties often run longer than six years) tell me and I'll change it. Enquiries that don't lead to work are kept until the enquiry is closed, as you specified. |
+| 38 | ⚠️ **Netlify named as host — my assumption** | "Who we share it with" | The policy now names **Netlify** plainly, and says its servers may sit outside the UK. I took that from `netlify.toml` in this repo, not from you. If the site ends up hosted somewhere else, this line must change before go-live. And if the enquiry forms are later wired to a third party (see item 4), that provider needs adding back to the list. |
 | 39 | ⚠️ **The cookie section is true today — keep it true** | "Cookies and analytics" | Right now the site sets **no cookies**, uses **no analytics**, and loads **nothing** from third parties. That's why there's no cookie banner. The moment anyone adds Google Analytics, a Facebook pixel, an embedded Google Map or a hosted font, that paragraph becomes false and you will need a consent banner. Tell me before adding any of those and I'll handle both. |
 | 40 | **ICO registration** | not currently mentioned | Most businesses that process personal data must register with the ICO and pay the annual data protection fee. If Tectum is registered, send the number and I'll add it. If not, worth checking whether you need to be. |
 
