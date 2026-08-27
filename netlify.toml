@@ -19,6 +19,12 @@
   [headers.values]
     Cache-Control = "public, max-age=86400, must-revalidate"
 
+# Same reasoning for video — not fingerprinted, so keep it revalidating.
+[[headers]]
+  for = "/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
 # The repo root is the publish directory, so the internal notes were being
 # served as public pages — /PLACEHOLDERS.md returned 200 on the live site.
 # Keep the docs in the repo, off the web.

@@ -5,6 +5,7 @@
    - Sticky-header shadow on scroll
    - Scroll-reveal for .reveal elements
    - Demo contact-form handler (no backend)
+   - Site video (autoplay unless reduced motion)
    - Auto year in footer
    ============================================================ */
 (function () {
@@ -112,6 +113,31 @@
       form.reset();
       note.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
+  }
+
+  /* ---- Site video ----
+     No autoplay attribute in the HTML, so the default is a still poster.
+     We start it here only if the visitor hasn't asked for reduced motion,
+     and only once it's actually on screen — no point pulling 2.5 MB for
+     something nobody scrolls to. */
+  var video = document.querySelector(".intro__video");
+  if (video && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var startVideo = function () {
+      video.preload = "auto";
+      video.muted = true;               // required for autoplay to be allowed
+      var p = video.play();
+      if (p && p.catch) { p.catch(function () { /* browser blocked it; poster stays */ }); }
+    };
+    if ("IntersectionObserver" in window) {
+      var vo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { startVideo(); vo.unobserve(entry.target); }
+        });
+      }, { threshold: 0.25 });
+      vo.observe(video);
+    } else {
+      startVideo();
+    }
   }
 
   /* ---- Footer year ---- */

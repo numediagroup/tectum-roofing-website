@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="assets/images/brand/favicon.png">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260827">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260828">
 
   <!-- Preload primary font weight for faster first paint -->
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -80,8 +80,17 @@
           <p class="reveal">Fully insured and qualified, Tectum Roofing holds all relevant industry accreditations and works in line with current UK building regulations to ensure every roof is safe, durable, and built to withstand the British climate. Customer satisfaction is at the heart of what we do, with honest advice, clear communication, and dependable service from start to finish. Whether you need trusted roof repairs or a reliable commercial roofing contractor, Tectum Roofing is a name you can trust.</p>
           <a href="#contact" class="btn btn--primary reveal">Get in Touch</a>
         </div>
-        <div class="intro__media reveal">
-          <img src="assets/images/slate-battens.jpg" alt="Battens being fixed out across a slate roof" width="1100" height="1467" loading="lazy">
+        <div class="intro__media intro__media--video reveal">
+          <!-- Client-supplied site video. Plays muted and looped, but only
+               when the visitor hasn't asked for reduced motion (see main.js).
+               Controls are on so it can be paused or unmuted. -->
+          <video class="intro__video" poster="assets/images/video-poster.jpg"
+                 width="480" height="854" muted loop playsinline controls preload="none"
+                 aria-label="Tectum Roofing at work on a slate roof">
+            <source src="assets/video/tectum-roofing.mp4" type="video/mp4">
+            <p>Your browser can&rsquo;t play this video.
+               <a href="assets/video/tectum-roofing.mp4">Download it instead</a>.</p>
+          </video>
         </div>
       </div>
     </section>
@@ -367,6 +376,6 @@
     <span class="wa-float__label">WhatsApp us</span>
   </a>
 
-  <script src="assets/js/main.js?v=20260827" defer></script>
+  <script src="assets/js/main.js?v=20260828" defer></script>
 </body>
 </html>

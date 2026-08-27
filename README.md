@@ -36,7 +36,7 @@ Press `Ctrl + C` in Terminal to stop the server.
    Roofing, Inspections & Surveys, Contact Us. Collapses to a mobile menu.
 2. **Hero** — roof photo, "Tectum Roofing" headline, the 15-years tagline, and
    two calls-to-action (Get a Quote / Our Services).
-3. **About** — "Roofing Professionals in South London…" intro text + image.
+3. **About** — "Roofing Professionals in South London…" intro text + the site video.
 4. **Brand band** — a full-width roofing photo divider.
 5. **Our Core Services** — the 8 services (Felt, GRP, Leadwork, New Roofing, Roof
    Tiling, Rubber, Slate, uPVC & Plastic), each with a real photo.
@@ -181,6 +181,24 @@ the live site. `netlify.toml` now returns 404 for both.
 They have to be listed **one per rule**. Netlify only supports a splat at the
 end of a path, so `from = "/*.md"` matches nothing and fails silently without
 any error. Add a rule for any new markdown file at the repo root.
+
+---
+
+## The site video
+
+`assets/video/tectum-roofing.mp4` — client-supplied phone footage of torch-on
+felt being laid, sitting in the homepage About section in place of a photo.
+
+- Re-encoded from 8.3 MB to **2.4 MB** (H.264, CRF 34, 480x854, mono audio,
+  `+faststart` so it streams rather than waiting for a full download).
+- `preload="none"` with a poster frame, so nothing downloads until someone
+  actually scrolls to it.
+- It is **portrait 9:16**. Filling the column would make it ~1000px tall, so
+  it is capped at 620px and centred — it reads as a deliberate phone clip.
+- Autoplay is handled in `main.js`, not by an `autoplay` attribute: it starts
+  muted and looped only when the clip scrolls into view, and **not at all** if
+  the visitor has asked for reduced motion. Controls are on so it can be
+  paused or unmuted.
 
 ---
 

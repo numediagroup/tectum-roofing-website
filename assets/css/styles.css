@@ -201,6 +201,20 @@ p{ margin:0 0 1rem; }
 /* ---------- 8. INTRO / ABOUT ---------- */
 .intro{ background:var(--paper); }
 .intro__media img{ width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow); }
+
+/* The site video is portrait 9:16. Letting it fill the column would make it
+   about 1000px tall, so it's capped and centred — reads as a deliberate
+   phone-shot clip rather than a broken image. */
+.intro__media--video{ display:flex; justify-content:center; }
+.intro__video{
+  display:block; width:auto; height:auto;
+  max-height:min(620px, 78svh); max-width:100%;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  background:var(--olive-darker);
+}
+@media (max-width:900px){
+  .intro__video{ max-height:none; width:min(420px,100%); }
+}
 .grid-2--text-media .intro__media{ order:2; }
 
 /* ---------- 9. PARALLAX BAND ---------- */
