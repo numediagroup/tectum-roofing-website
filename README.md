@@ -36,9 +36,9 @@ Press `Ctrl + C` in Terminal to stop the server.
    Roofing, Inspections & Surveys, Contact Us. Collapses to a mobile menu.
 2. **Hero** — roof photo, "Tectum Roofing" headline, the 15-years tagline, and
    two calls-to-action (Get a Quote / Our Services).
-3. **About** — "Roofing Professionals in South London…" intro text + image.
+3. **About** — "Roofing Professionals in South London…" intro text + the site video.
 4. **Brand band** — a full-width roofing photo divider.
-5. **Our Core Services** — the 8 services (Felt, GRP, Leadwork, Re-Roofing, Roof
+5. **Our Core Services** — the 8 services (Felt, GRP, Leadwork, New Roofing, Roof
    Tiling, Rubber, Slate, uPVC & Plastic), each with a real photo.
 6. **What Sets Our Roofing Work Apart** — image + the two feature points.
 7. **View Our Most Recent Projects** — 4 project cards.
@@ -56,7 +56,7 @@ there is deliberately **no separate page per service**.
   nav is flat — no dropdown.
 - Each section is three paragraphs of prose beside its photo, then four key
   points as a two-column tick list.
-- **Two CTA bands** break the page up (after GRP and after Re-Roofs), and the
+- **Two CTA bands** break the page up (after GRP and after New Roofing), and the
   page ends with its own **Request a Quote** form — the same form as the
   homepage, so it behaves identically.
 - The homepage service cards link through to their matching section, and both
@@ -71,7 +71,7 @@ Section order and anchors:
 | 3 | GRP (Fibreglass Roofing) | `#grp-roofing` |
 | 4 | Tiling | `#roof-tiling` |
 | 5 | Rubber Roofing (EPDM) | `#rubber-roofing` |
-| 6 | Re-Roofs | `#re-roofing` |
+| 6 | New Roofing | `#new-roofing` |
 | 7 | Lead Roofing & Leadwork | `#leadwork` |
 | 8 | uPVC & Plastics | `#upvc-plastic` |
 
@@ -181,6 +181,27 @@ the live site. `netlify.toml` now returns 404 for both.
 They have to be listed **one per rule**. Netlify only supports a splat at the
 end of a path, so `from = "/*.md"` matches nothing and fails silently without
 any error. Add a rule for any new markdown file at the repo root.
+
+---
+
+## The site video
+
+`assets/video/tectum-roofing.mp4` — client-supplied phone footage of torch-on
+felt being laid, sitting in the homepage About section in place of a photo.
+
+- Re-encoded from 8.3 MB to **2.4 MB** (H.264, CRF 34, 480x854, mono audio,
+  `+faststart` so it streams rather than waiting for a full download).
+- `preload="none"` with a poster frame, so nothing downloads until someone
+  actually scrolls to it.
+- It is **portrait 9:16**. Shown whole it was only ~350px wide in the column,
+  so it fills the full width and is cropped to **4:5** with `object-fit:cover`.
+  The torch and hands sit centre frame, so the crop trims sky and decking at
+  the edges rather than the action. Change `aspect-ratio` on `.intro__video`
+  to adjust how much is cropped.
+- Autoplay is handled in `main.js`, not by an `autoplay` attribute: it starts
+  muted and looped only when the clip scrolls into view, and **not at all** if
+  the visitor has asked for reduced motion. Controls are on so it can be
+  paused or unmuted.
 
 ---
 

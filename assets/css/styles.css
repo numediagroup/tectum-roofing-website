@@ -201,6 +201,17 @@ p{ margin:0 0 1rem; }
 /* ---------- 8. INTRO / ABOUT ---------- */
 .intro{ background:var(--paper); }
 .intro__media img{ width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow); }
+
+/* The clip is portrait 9:16. Shown whole it was only ~350px wide in the
+   column, so it now fills the full width and is cropped to 4:5 — the torch
+   and hands sit centre frame, so cover keeps the action and trims the
+   empty sky and decking at the edges. */
+.intro__video{
+  display:block; width:100%; height:auto;
+  aspect-ratio:4/5; object-fit:cover; object-position:center center;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  background:var(--olive-darker);
+}
 .grid-2--text-media .intro__media{ order:2; }
 
 /* ---------- 9. PARALLAX BAND ---------- */
@@ -216,6 +227,7 @@ p{ margin:0 0 1rem; }
 .services{ background:var(--cream); }
 .cards{ list-style:none; margin:0; padding:0; display:grid; gap:1.5rem; }
 .cards--4{ grid-template-columns:repeat(4,1fr); }
+.cards--5{ grid-template-columns:repeat(5,1fr); }
 
 .card{
   background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
@@ -351,8 +363,15 @@ p{ margin:0 0 1rem; }
 }
 
 /* ---------- 16. RESPONSIVE ---------- */
+@media (max-width:1240px){
+  /* five across gets cramped before the nav does — step down earlier */
+  .cards--5{ grid-template-columns:repeat(3,1fr); }
+}
 @media (max-width:1000px){
   .cards--4{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:820px){
+  .cards--5{ grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:900px){
   /* On stacked layouts, image goes below text again for readability */
@@ -377,6 +396,7 @@ p{ margin:0 0 1rem; }
 }
 @media (max-width:560px){
   .cards--4{ grid-template-columns:1fr; }
+  .cards--5{ grid-template-columns:1fr; }
   .hero__actions .btn{ flex:1 1 auto; }
   .band__media{ background-attachment:scroll; }
 }
