@@ -182,7 +182,7 @@ p{ margin:0 0 1rem; }
   min-height:min(82svh,760px); overflow:hidden; }
 .hero__media{
   position:absolute; inset:0;
-  background:url("../images/roof-aerial-slate.jpg") center 30%/cover no-repeat;
+  background:url("../images/hero-roof-aerial.jpg") center center/cover no-repeat;
   transform:scale(1.05);
 }
 .hero__overlay{
