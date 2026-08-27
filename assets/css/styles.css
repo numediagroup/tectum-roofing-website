@@ -182,7 +182,7 @@ p{ margin:0 0 1rem; }
   min-height:min(82svh,760px); overflow:hidden; }
 .hero__media{
   position:absolute; inset:0;
-  background:url("../images/hero.jpg") center 30%/cover no-repeat;
+  background:url("../images/roof-aerial-slate.jpg") center 30%/cover no-repeat;
   transform:scale(1.05);
 }
 .hero__overlay{
@@ -207,7 +207,7 @@ p{ margin:0 0 1rem; }
 .band{ position:relative; height:clamp(220px,32vw,360px); overflow:hidden; }
 .band__media{
   position:absolute; inset:0;
-  background:url("../images/band.jpg") center/cover no-repeat fixed;
+  background:url("../images/roof-aerial-gable.jpg") center/cover no-repeat fixed;
 }
 .band__overlay{ position:absolute; inset:0;
   background:linear-gradient(0deg, rgba(44,46,28,.72), rgba(44,46,28,.55)); }
@@ -407,7 +407,7 @@ html:has(.svc){ scroll-behavior:auto; }
 .page-hero{ position:relative; display:flex; align-items:center; min-height:clamp(300px,44vw,460px); overflow:hidden; }
 .page-hero__media{
   position:absolute; inset:0;
-  background:url("../images/band.jpg") center 40%/cover no-repeat;
+  background:url("../images/roof-aerial-gable.jpg") center 40%/cover no-repeat;
   transform:scale(1.04);
 }
 .page-hero__overlay{
@@ -487,8 +487,8 @@ html:has(.svc){ scroll-behavior:auto; }
   padding:clamp(3.5rem,8vw,6rem) 0;
 }
 .cta-break__media{ position:absolute; inset:0; background-position:center; background-size:cover; background-repeat:no-repeat; }
-.cta-break--a .cta-break__media{ background-image:url("../images/hero.jpg"); background-position:center 35%; }
-.cta-break--b .cta-break__media{ background-image:url("../images/about.jpg"); background-position:center 40%; }
+.cta-break--a .cta-break__media{ background-image:url("../images/roof-aerial-slate.jpg"); background-position:center 35%; }
+.cta-break--b .cta-break__media{ background-image:url("../images/new-tile-gable.jpg"); background-position:center 40%; }
 .cta-break__overlay{
   position:absolute; inset:0;
   background:linear-gradient(0deg, rgba(30,32,20,.9), rgba(44,46,28,.78));
@@ -500,10 +500,8 @@ html:has(.svc){ scroll-behavior:auto; }
 @media (max-width:560px){ .cta-break__actions .btn{ flex:1 1 auto; } }
 
 /* ---------- 17f. COMMERCIAL PAGE ---------- */
-/* PLACEHOLDER: no commercial photography exists yet — the banner
-   reuses a domestic job photo. */
 .page-hero--commercial .page-hero__media{
-  background-image:url("../images/hero.jpg");
+  background-image:url("../images/commercial/office-roof.jpg");
   background-position:center 55%;
 }
 
@@ -530,11 +528,8 @@ html:has(.svc){ scroll-behavior:auto; }
 .systems a:hover{ background:var(--olive); border-color:var(--olive); color:#fff; transform:translateY(-2px); }
 
 /* ---------- 17g. INSPECTIONS PAGE ---------- */
-/* Pulled from the original site's media library: a moss-covered
-   pitched roof, i.e. exactly the kind of roof a survey is called out
-   to look at. */
 .page-hero--inspections .page-hero__media{
-  background-image:url("../images/survey-roof.jpg");
+  background-image:url("../images/survey-scaffold.jpg");
   background-position:center 55%;
 }
 
@@ -544,8 +539,8 @@ html:has(.svc){ scroll-behavior:auto; }
 
 /* ---------- 17h. CONTACT PAGE ---------- */
 .page-hero--contact .page-hero__media{
-  background-image:url("../images/about.jpg");
-  background-position:center 40%;
+  background-image:url("../images/hero-contact.jpg");
+  background-position:center 45%;
 }
 
 /* Screen-reader-only heading (the cards below are self-explanatory
@@ -629,7 +624,7 @@ a.contact-card__value:hover{ color:var(--olive); text-decoration:underline; }
 
 /* ---------- 17j. PROJECTS PAGE ---------- */
 .page-hero--projects .page-hero__media{
-  background-image:url("../images/intro-roof-repair.jpg");
+  background-image:url("../images/slate-battens.jpg");
   background-position:center 55%;
 }
 

@@ -35,14 +35,14 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 
 | # | What it is | Where | What I need from you |
 |---|------------|-------|----------------------|
-| 11 | **Section photos are stand-ins** | `domestic-roofing.html` · all 8 sections | Each service section reuses the photo already in `assets/images/services/` for that service — the same eight images as the homepage cards, taken from the reference site. They are correct *subjects* but they are not new photography. Send genuine Tectum job photos (ideally 2–3 per service) and I'll swap them in. Marked `PLACEHOLDER: image` at each one. |
+| ~~11~~ | ~~Section photos are stand-ins~~ | ✅ RESOLVED — replaced with genuine Tectum photography supplied by the client (Aug 2026). |
 | 12 | **"Double A Roofing" in the supplied copy** | `domestic-roofing.html` · Felt, Slating, Tiling, Re-Roofs | Your text said "At Double A Roofing…" in four places. I wrote **Tectum Roofing**, consistent with the rest of the site (see item 2). Confirm. |
 | 13 | **Menu labels vs section headings** | "Jump to" row + footer vs section `<h2>`s | Your menu list and your body copy use different names for four services: **"Slate Roofs"** → heading **"Slating"**; **"GRP Roofs"** → **"GRP (Fibreglass Roofing)"**; **"Tiled Roofs"** → **"Tiling"**; **"uPVC & Plastic Roofing"** → **"uPVC & Plastics"**. Both are your words so I kept both as written. Say which set you want and I'll make them match. |
 | 14 | **Service area wording** | sitewide | ⚠️ PARTLY RESOLVED — every **contact block and footer** now reads "London, Surrey, Sussex & Surrounding Areas", matching your three newer briefs. Two things on the homepage still say **South London**, and I left them deliberately because they look like local-SEO positioning rather than contact details: the page `<title>` and the heading *"Roofing Professionals in South London and the Surrounding Areas"*. Tell me whether South London should stay in those, and I'll finish the job either way. |
 | ~~15~~ | ~~No quote form on the service page~~ | Contact section | ✅ RESOLVED — the page now ends with its own **Request a Quote** section, the same form as the homepage. Still no backend (see item 4). |
 | 17 | **CTA break copy is mine** | `domestic-roofing.html` · two CTA bands | Two photo CTA bands split the eight services (after GRP and after Re-Roofs). Nothing was supplied for these, so I wrote the headings and paragraphs: *"Not sure which system your roof needs?"* and *"Roof leaking? Talk to us today."* Both are marked `PLACEHOLDER` in the code — rewrite freely. |
 | 18 | **Your copy was regrouped into paragraphs** | `domestic-roofing.html` · all 8 sections | Your text arrived as ~15 standalone statements per service. To make it read as prose I grouped them into three paragraphs plus four key points, joining sentences with light connectives ("and", "it", "they"). No facts were added, removed or changed — but the wording is no longer identical line-for-line. Worth a read-through. |
-| 16 | **Hero image is reused** | `domestic-roofing.html` · page hero | The page banner reuses `assets/images/band.jpg` from the homepage divider. A dedicated domestic-roofing banner shot would be better. |
+| ~~16~~ | ~~Hero image is reused~~ | ✅ RESOLVED — the domestic banner is now its own drone shot. |
 
 ---
 
@@ -50,7 +50,7 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 
 | # | What it is | Where | What I need from you |
 |---|------------|-------|----------------------|
-| 19 | **Every photo is a domestic job** | `commercial-roofing.html` · banner + 4 sections | This is the biggest gap on the page. There is **no commercial photography anywhere in the asset folder**, so a page about offices, warehouses and schools is illustrated entirely with house roofs. Commercial job photos would lift this page more than anything else. Each one is marked `PLACEHOLDER: image` in the code. |
+| ~~19~~ | ~~Every photo is a domestic job~~ | ✅ RESOLVED — the commercial page now uses genuine commercial jobs: office blocks, tower cranes, membrane going down, crews in hi-vis. This was the biggest gap on the site and it is closed. |
 | 20 | **"Double A Roofing" in the supplied copy** | throughout | Your text said "Double A Roofing" in four places. I wrote **Tectum Roofing**, consistent with the rest of the site (see items 2 and 12). |
 | 21 | **Section headings are my wording** | all section `<h2>`s | Your copy arrived as eight paragraphs with a single heading ("Commercial Roofing Services", which I kept). To break 366 words into a browsable page I wrote the rest: *Buildings We Work On*, *Commercial Roofing Systems*, *Fully Insured, Fully Accredited*, *Inspections, Repairs & Re-Roofing*, *Clear Communication, Start to Finish*, *Arrange a Professional Assessment*. The CTA band heading *"Leaks cost more than a repair does"* is also mine. All easy to change. |
 | 22 | **The systems chips link to the domestic page** | `commercial-roofing.html` · Commercial Roofing Systems | The seven system chips (felt, GRP, EPDM, tiling, slating, leadwork, re-roofs) link through to the full write-up of each on the domestic page, since your commercial copy names them but doesn't describe them. Tell me if you'd rather they didn't link at all, or if you want commercial-specific descriptions written. |
@@ -62,7 +62,7 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 
 | # | What it is | Where | What I need from you |
 |---|------------|-------|----------------------|
-| 24 | **No inspection photography** | 4 sections (banner now improved) | ⚠️ PARTLY IMPROVED — the **banner** now uses a photo recovered from the old site's media library: a moss-covered pitched roof, i.e. exactly the kind of roof a survey gets called out to. The four section photos are still existing job shots standing in. Photos of someone actually surveying (ladders, moisture meter, drone, clipboard) would still suit this page better. |
+| ~~24~~ | ~~No inspection photography~~ | ✅ RESOLVED — the inspections page now has its own set: aerial survey view, parapet edge, lead detailing and a completed roof. |
 | 25 | **"Double A Roofing" in the supplied copy** | throughout | Said "Double A Roofing" in four places; written as **Tectum Roofing** to match the rest of the site. |
 | 26 | **Section headings are my wording** | all section `<h2>`s | Your copy carried one heading ("Roof Inspections & Surveys", which I kept). I wrote the rest: *The Surveys We Carry Out*, *What We Check*, *Commercial Roof Surveys*, *Clear, Unbiased Assessments*, *What You Get Afterwards*, *Arrange a Roof Inspection*, plus the CTA band line *"A survey now is cheaper than a roof later"*. |
 | 27 | **What does the client actually receive?** | "What You Get Afterwards" section | Your copy says you provide "a detailed overview of our findings". It doesn't say whether that's a **written report / PDF**, photographs, or a conversation on the day. That's usually a deciding factor for pre-purchase and insurance work, so it's worth spelling out. Tell me which it is and I'll add a line. |
@@ -125,8 +125,8 @@ pitched roof (now the Inspections banner — see item 24).
 | # | What it is | Where | What I need from you |
 |---|------------|-------|----------------------|
 | 41 | **Captions describe, they don't record** | gallery | The old site carried no project details — no dates, locations, client names or job descriptions. So each caption just says what the photo shows ("Slate roof with roof windows", "Re-roof, stripped to the rafters"). If you can tell me what any of these jobs actually were, real captions would make this page far stronger. |
-| 42 | ⚠️ **This is all the photography that exists** | whole page | The gallery necessarily reuses images that already appear elsewhere on the site, because 15 job photos is the entire stock. A projects page is the one page that really benefits from fresh, plentiful photos — a phone camera on the next few jobs would fix this faster than anything else. |
-| 43 | **A house number is visible** | gallery · "Felt flat roof over a bay and porch" | The front door in that photo shows the number **43b**. It was already public on the old site so this isn't new exposure, but it is a customer's property. Say the word and I'll crop it out or drop the photo. |
+| ~~42~~ | ~~This is all the photography that exists~~ | ✅ RESOLVED — 41 new job photos supplied. The gallery now uses thirteen photos that appear **nowhere else** on the site, so nothing repeats. |
+| ~~43~~ | ~~A house number is visible~~ | ✅ RESOLVED — that photo is no longer used anywhere on the site. |
 | 44 | **Four project titles are real, descriptions are not** | "Recent Projects" | The four titles (Tiling Project, Felt Roofing, New Roofing, Roof Repairs) come from your old site. The one-line descriptions under them are still my invented copy — same as item 7. |
 
 ---

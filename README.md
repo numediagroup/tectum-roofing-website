@@ -92,8 +92,8 @@ The second inner page, built from the 366-word commercial brief.
 Section anchors: `#overview`, `#buildings`, `#systems`, `#accreditation`,
 `#repairs`, `#working-with-us`, `#quote`.
 
-⚠️ Every photo on this page is a domestic job — there is no commercial
-photography in the asset folder yet. See `PLACEHOLDERS.md` item 19.
+All photography on this page is genuine commercial work — office blocks,
+tower cranes, membrane being laid, crews on site.
 
 ## The Inspections & Surveys page (`inspections-surveys.html`)
 
@@ -111,8 +111,8 @@ The third and final inner page, built from the 369-word survey brief.
 Section anchors: `#overview`, `#survey-types`, `#what-we-check`,
 `#commercial-surveys`, `#accreditation`, `#your-report`, `#quote`.
 
-⚠️ Every photo is an existing job shot standing in — there is no survey
-photography in the asset folder. See `PLACEHOLDERS.md` item 24.
+The page has its own photo set: an aerial survey view, a parapet edge, lead
+detailing and a completed roof.
 
 ## The Previous Projects page (`previous-projects.html`)
 
@@ -124,11 +124,9 @@ photography in the asset folder. See `PLACEHOLDERS.md` item 24.
   than in a bar underneath.
 - A **CTA band** to close.
 
-All photography was pulled from the original WordPress site's media library and
-**stored locally** in `assets/images/`. Nothing is hot-linked, so the gallery
-survives the old site going offline. Theme stock that shipped with the
-WordPress template (tunnels, bridges, generic construction) was deliberately
-excluded — only genuine job photos are used.
+The thirteen gallery photos appear **nowhere else on the site**, so the page
+never repeats what you have already seen. All imagery is client-supplied and
+stored locally in `assets/images/` — nothing is hot-linked and nothing is stock.
 
 Reachable from the nav, both footers, and the homepage "View Our Projects"
 button (which previously pointed at the contact form by mistake).
@@ -183,6 +181,29 @@ the live site. `netlify.toml` now returns 404 for both.
 They have to be listed **one per rule**. Netlify only supports a splat at the
 end of a path, so `from = "/*.md"` matches nothing and fails silently without
 any error. Add a rule for any new markdown file at the repo root.
+
+---
+
+## Images
+
+All photography is client-supplied (Aug 2026), resized to roughly twice its
+display size and saved at quality 76–78. Roughly 8 MB across 40 files; every
+one is referenced, and every `<img>` carries `alt`, `width` and `height`.
+
+```
+assets/images/
+├── *.jpg                 shared banners and section images
+├── services/             the eight domestic services
+├── projects/             the four featured projects
+├── commercial/           genuine commercial jobs
+├── inspections/          survey photography
+└── gallery/              13 photos used only on the projects page
+```
+
+**Filenames are not fingerprinted.** If you swap a photo, give the file a new
+name as well — otherwise browsers keep serving the old one. The image cache
+header is one day with revalidation, so a same-name swap recovers within a day
+rather than the month it used to take.
 
 ---
 
