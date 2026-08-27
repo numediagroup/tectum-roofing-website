@@ -193,8 +193,11 @@ felt being laid, sitting in the homepage About section in place of a photo.
   `+faststart` so it streams rather than waiting for a full download).
 - `preload="none"` with a poster frame, so nothing downloads until someone
   actually scrolls to it.
-- It is **portrait 9:16**. Filling the column would make it ~1000px tall, so
-  it is capped at 620px and centred — it reads as a deliberate phone clip.
+- It is **portrait 9:16**. Shown whole it was only ~350px wide in the column,
+  so it fills the full width and is cropped to **4:5** with `object-fit:cover`.
+  The torch and hands sit centre frame, so the crop trims sky and decking at
+  the edges rather than the action. Change `aspect-ratio` on `.intro__video`
+  to adjust how much is cropped.
 - Autoplay is handled in `main.js`, not by an `autoplay` attribute: it starts
   muted and looped only when the clip scrolls into view, and **not at all** if
   the visitor has asked for reduced motion. Controls are on so it can be
