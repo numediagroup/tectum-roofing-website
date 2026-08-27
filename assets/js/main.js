@@ -41,8 +41,9 @@
 
   /* ---- Scroll reveal ---- */
   var revealEls = document.querySelectorAll(".reveal");
+  var io = null;
   if ("IntersectionObserver" in window && revealEls.length) {
-    var io = new IntersectionObserver(function (entries) {
+    io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
@@ -55,6 +56,42 @@
     // Fallback: show everything
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
+
+  /* Landing straight on an anchor (e.g. domestic-roofing.html#leadwork)
+     jumps the page before the observer's first pass, which left the
+     section blank until the visitor scrolled. This sweeps anything
+     already on screen and reveals it. */
+  var revealInView = function () {
+    Array.prototype.forEach.call(document.querySelectorAll(".reveal"), function (el) {
+      if (el.classList.contains("is-visible")) { return; }
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add("is-visible");
+        if (io) { io.unobserve(el); }
+      }
+    });
+  };
+  window.addEventListener("load", revealInView);
+  window.addEventListener("hashchange", function () { setTimeout(revealInView, 80); });
+
+  /* The observer can also miss elements that fly past during a long
+     smooth scroll, so sweep on scroll too (rAF-throttled, and it
+     unhooks itself once everything has been revealed). */
+  var sweeping = false;
+  var onScrollReveal = function () {
+    if (sweeping) { return; }
+    sweeping = true;
+    window.requestAnimationFrame(function () {
+      sweeping = false;
+      revealInView();
+      if (!document.querySelector(".reveal:not(.is-visible)")) {
+        window.removeEventListener("scroll", onScrollReveal);
+      }
+    });
+  };
+  window.addEventListener("scroll", onScrollReveal, { passive: true });
+
+  revealInView();
 
   /* ---- Demo contact form (no backend) ----
      PLACEHOLDER: wire this to a real handler (e.g. Formspree,

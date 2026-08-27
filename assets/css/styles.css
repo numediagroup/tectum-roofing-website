@@ -143,6 +143,14 @@ p{ margin:0 0 1rem; }
   /* cropped logo keeps its olive tile, so it blends into the olive header */
 }
 .nav{ display:flex; align-items:center; gap:clamp(1rem,2vw,2rem); }
+/* Six items plus the CTA is a lot of nav — tighten it up before the
+   mobile breakpoint rather than letting it wrap. */
+@media (min-width:901px) and (max-width:1240px){
+  .nav{ gap:1rem; }
+  .nav__link{ font-size:.9rem; }
+  .nav__link--cta{ padding:.45rem .85rem; }
+  .site-logo img{ height:clamp(64px,7vw,88px); }
+}
 .nav__link{
   position:relative; color:var(--on-dark); font-weight:600; font-size:.98rem; padding:.4rem 0;
   transition:color .2s var(--ease);
@@ -174,7 +182,7 @@ p{ margin:0 0 1rem; }
   min-height:min(82svh,760px); overflow:hidden; }
 .hero__media{
   position:absolute; inset:0;
-  background:url("../images/hero.jpg") center 30%/cover no-repeat;
+  background:url("../images/roof-aerial-slate.jpg") center 30%/cover no-repeat;
   transform:scale(1.05);
 }
 .hero__overlay{
@@ -199,7 +207,7 @@ p{ margin:0 0 1rem; }
 .band{ position:relative; height:clamp(220px,32vw,360px); overflow:hidden; }
 .band__media{
   position:absolute; inset:0;
-  background:url("../images/band.jpg") center/cover no-repeat fixed;
+  background:url("../images/roof-aerial-gable.jpg") center/cover no-repeat fixed;
 }
 .band__overlay{ position:absolute; inset:0;
   background:linear-gradient(0deg, rgba(44,46,28,.72), rgba(44,46,28,.55)); }
@@ -291,7 +299,8 @@ p{ margin:0 0 1rem; }
   display:grid; gap:2.5rem; padding:clamp(3rem,6vw,4.5rem) 0 clamp(2rem,4vw,3rem);
   grid-template-columns:1fr;
 }
-@media (min-width:760px){ .footer__grid{ grid-template-columns:2fr 1fr 1fr; } }
+@media (min-width:700px){ .footer__grid{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1040px){ .footer__grid{ grid-template-columns:1.8fr 1fr 1fr 1.1fr; } }
 .footer__brand img{ height:92px; width:auto; margin-bottom:1rem; }
 .footer__brand p{ color:var(--on-dark-mut); max-width:42ch; font-size:.95rem; }
 .footer__col h4{
@@ -309,6 +318,10 @@ p{ margin:0 0 1rem; }
 }
 .socials a:hover{ background:var(--brass); transform:translateY(-2px); }
 .footer__bar{ border-top:1px solid rgba(255,255,255,.12); padding:1.25rem 0; }
+.footer__bar-inner{ display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; align-items:center; justify-content:space-between; }
+.footer__legal{ margin:0; font-size:.88rem; }
+.footer__legal a{ color:var(--on-dark-mut); transition:color .2s var(--ease); }
+.footer__legal a:hover{ color:#fff; text-decoration:underline; }
 .footer__bar p{ margin:0; font-size:.88rem; color:var(--on-dark-mut); }
 
 /* ---------- WhatsApp floating button ---------- */
@@ -366,4 +379,291 @@ p{ margin:0 0 1rem; }
   .cards--4{ grid-template-columns:1fr; }
   .hero__actions .btn{ flex:1 1 auto; }
   .band__media{ background-attachment:scroll; }
+}
+
+/* ============================================================
+   17. INNER-PAGE STYLES  (added for domestic-roofing.html)
+   ------------------------------------------------------------
+   a. Anchor scroll offset under the sticky header
+   b. Page hero + breadcrumb
+   c. Jump-link row
+   d. Service sections
+   e. CTA band
+   ============================================================ */
+
+/* Homepage service cards now link through to their section */
+.card__link{ display:block; color:inherit; }
+
+/* ---------- 17a. ANCHOR OFFSET (sticky header) ---------- */
+.svc[id], .contact[id]{ scroll-margin-top:clamp(104px,13vw,158px); }
+
+/* The service page is ~9,000px tall, so a "smooth" jump from the menu
+   to section 8 crawls for several seconds and flashes through every
+   section on the way. Instant jumps on pages that have service
+   sections; the homepage keeps its short smooth scrolls. */
+html:has(.svc){ scroll-behavior:auto; }
+
+/* ---------- 17b. PAGE HERO ---------- */
+.page-hero{ position:relative; display:flex; align-items:center; min-height:clamp(300px,44vw,460px); overflow:hidden; }
+.page-hero__media{
+  position:absolute; inset:0;
+  background:url("../images/roof-aerial-gable.jpg") center 40%/cover no-repeat;
+  transform:scale(1.04);
+}
+.page-hero__overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(100deg, rgba(30,32,20,.9) 0%, rgba(44,46,28,.7) 50%, rgba(44,46,28,.42) 100%);
+}
+.page-hero__inner{ position:relative; padding:clamp(2.5rem,7vw,4.5rem) 0; max-width:800px; }
+.page-hero__title{ color:#fff; margin:0 0 .8rem; font-size:clamp(2.2rem,5vw,3.6rem); }
+.page-hero__lead{ color:var(--on-dark); font-size:clamp(1rem,1.6vw,1.2rem); max-width:62ch; margin:0; }
+
+.crumbs{
+  font-size:.8rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:#d3b783; margin-bottom:1rem;
+}
+.crumbs a{ color:#e9dcc2; }
+.crumbs a:hover{ color:#fff; text-decoration:underline; }
+.crumbs span[aria-hidden]{ opacity:.5; margin:0 .35rem; }
+
+/* ---------- 17c. JUMP LINKS ---------- */
+.jump{ background:var(--olive-deep); padding:1.5rem 0; }
+.jump__label{
+  margin:0 0 .8rem; font-size:.72rem; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--brass);
+}
+.jump__list{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.6rem; }
+.jump__list a{
+  display:inline-block; padding:.5rem 1rem; font-size:.9rem; font-weight:600;
+  color:var(--on-dark); background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16); border-radius:50px;
+  transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.jump__list a:hover{ background:var(--brass); border-color:var(--brass); color:#fff; transform:translateY(-2px); }
+
+/* ---------- 17d. SERVICE SECTIONS ---------- */
+.svc{ background:var(--paper); padding:clamp(3rem,7vw,5.5rem) 0; }
+.svc--alt{ background:var(--cream); }
+.svc + .svc{ border-top:1px solid var(--line); }
+
+.svc__grid{ display:grid; gap:clamp(1.75rem,4vw,3.5rem); align-items:start; margin-bottom:clamp(1.75rem,4vw,3rem); }
+@media (min-width:900px){
+  .svc__grid{ grid-template-columns:.85fr 1fr; }
+  .svc__grid--reverse .svc__media{ order:2; }
+}
+.svc__media img{
+  width:100%; height:100%; aspect-ratio:4/3; object-fit:cover;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.svc__text h2{ margin-bottom:.9rem; }
+.svc__text p{ color:var(--muted); }
+.svc__lead{ font-size:1.12rem; color:var(--ink) !important; }
+/* Text-only section — centred column, centre-aligned */
+.svc__text--narrow{ max-width:800px; margin-inline:auto; text-align:center; }
+.svc__text--narrow .btn{ margin-inline:auto; }
+.svc__text .btn{ margin-top:.6rem; }
+
+.svc__points{
+  list-style:none; margin:0; padding:0;
+  display:grid; gap:.75rem 2.5rem;
+  border-top:1px solid var(--line); padding-top:clamp(1.5rem,3vw,2.25rem);
+}
+@media (min-width:760px){ .svc__points{ grid-template-columns:1fr 1fr; } }
+.svc__points li{
+  position:relative; padding-left:1.9rem; color:var(--ink); font-size:.98rem; line-height:1.6;
+}
+.svc__points li::before{
+  content:""; position:absolute; left:0; top:.45em;
+  width:11px; height:6px; border-left:2.5px solid var(--olive); border-bottom:2.5px solid var(--olive);
+  transform:rotate(-45deg);
+}
+.svc--alt .svc__points{ border-top-color:#ded5c2; }
+
+/* ---------- 17e. CTA BREAKS ---------- */
+/* Full-bleed photo bands that split the eight services into groups
+   and give people a way out to the form at three points on the page. */
+.cta-break{
+  position:relative; overflow:hidden; text-align:center;
+  padding:clamp(3.5rem,8vw,6rem) 0;
+}
+.cta-break__media{ position:absolute; inset:0; background-position:center; background-size:cover; background-repeat:no-repeat; }
+.cta-break--a .cta-break__media{ background-image:url("../images/roof-aerial-slate.jpg"); background-position:center 35%; }
+.cta-break--b .cta-break__media{ background-image:url("../images/new-tile-gable.jpg"); background-position:center 40%; }
+.cta-break__overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(0deg, rgba(30,32,20,.9), rgba(44,46,28,.78));
+}
+.cta-break__inner{ position:relative; max-width:720px; }
+.cta-break h2{ color:#fff; }
+.cta-break p{ color:var(--on-dark); margin:0; }
+.cta-break__actions{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1.9rem; }
+@media (max-width:560px){ .cta-break__actions .btn{ flex:1 1 auto; } }
+
+/* ---------- 17f. COMMERCIAL PAGE ---------- */
+.page-hero--commercial .page-hero__media{
+  background-image:url("../images/commercial/office-roof.jpg");
+  background-position:center 55%;
+}
+
+/* Property types — plain typographic tiles, no photos needed */
+.types{ list-style:none; margin:0; padding:0; display:grid; gap:1rem; }
+@media (min-width:600px){ .types{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:900px){ .types{ grid-template-columns:repeat(3,1fr); } }
+.types__item{
+  background:var(--paper); border:1px solid var(--line); border-left:4px solid var(--olive);
+  border-radius:var(--radius); padding:1.25rem 1.4rem;
+  font-weight:700; font-size:1.05rem; letter-spacing:-.01em;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-left-color .25s var(--ease);
+}
+.types__item:hover{ transform:translateY(-3px); box-shadow:var(--shadow); border-left-color:var(--brass); }
+
+/* Roofing systems — chips linking to the full write-up on the domestic page */
+.systems{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center; }
+.systems a{
+  display:inline-block; padding:.7rem 1.3rem; font-size:.95rem; font-weight:700;
+  color:var(--olive); background:var(--paper);
+  border:2px solid var(--line); border-radius:50px;
+  transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.systems a:hover{ background:var(--olive); border-color:var(--olive); color:#fff; transform:translateY(-2px); }
+
+/* ---------- 17g. INSPECTIONS PAGE ---------- */
+.page-hero--inspections .page-hero__media{
+  background-image:url("../images/survey-scaffold.jpg");
+  background-position:center 55%;
+}
+
+/* The "What We Check" list is single words, not sentences — three
+   columns keeps it from stranding a lot of white space. */
+@media (min-width:760px){ .svc__points--compact{ grid-template-columns:repeat(3,1fr); } }
+
+/* ---------- 17h. CONTACT PAGE ---------- */
+.page-hero--contact .page-hero__media{
+  background-image:url("../images/hero-contact.jpg");
+  background-position:center 45%;
+}
+
+/* Screen-reader-only heading (the cards below are self-explanatory
+   visually, but the section still needs a heading in the outline) */
+.visually-hidden{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* Phone / WhatsApp / email / area — the four ways to reach us */
+.contact-cards{ list-style:none; margin:0; padding:0; display:grid; gap:1.25rem; }
+@media (min-width:640px){ .contact-cards{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1040px){ .contact-cards{ grid-template-columns:repeat(4,1fr); } }
+.contact-card{
+  background:var(--paper); border:1px solid var(--line); border-top:3px solid var(--olive);
+  border-radius:var(--radius); padding:1.6rem 1.5rem;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-top-color .25s var(--ease);
+}
+.contact-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); border-top-color:var(--brass); }
+.contact-card__label{
+  margin:0 0 .55rem; font-size:.72rem; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--brass);
+}
+.contact-card__value{
+  display:block; font-size:1.3rem; font-weight:800; letter-spacing:-.02em; line-height:1.25;
+  color:var(--ink); transition:color .2s var(--ease);
+}
+a.contact-card__value:hover{ color:var(--olive); text-decoration:underline; }
+.contact-card__value--email{ font-size:1.05rem; word-break:break-word; }
+.contact-card__note{ margin:.6rem 0 0; color:var(--muted); font-size:.92rem; }
+
+/* Route cards — send people to the right service page */
+.route-cards{ list-style:none; margin:0; padding:0; display:grid; gap:1.5rem; }
+@media (min-width:820px){ .route-cards{ grid-template-columns:repeat(3,1fr); } }
+.route-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+  padding:1.9rem 1.75rem;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.route-card:hover{ transform:translateY(-5px); box-shadow:var(--shadow); }
+.route-card h3{ margin:0 0 .6rem; font-size:1.25rem; }
+.route-card h3 a{ color:var(--olive); }
+.route-card h3 a::after{ content:" \2192"; }
+.route-card h3 a:hover{ text-decoration:underline; }
+.route-card p{ margin:0; color:var(--muted); font-size:.96rem; }
+
+/* ---------- 17i. LEGAL PAGES ---------- */
+.legal-head{
+  background:var(--olive-darker); color:var(--on-dark);
+  padding:clamp(2.5rem,6vw,4rem) 0 clamp(2rem,5vw,3rem);
+}
+.legal-head__title{ color:#fff; margin:0 0 .5rem; font-size:clamp(2.1rem,4.5vw,3.2rem); }
+.legal-head__meta{
+  margin:0; color:var(--on-dark-mut); font-size:.9rem;
+  letter-spacing:.04em;
+}
+
+.legal{ background:var(--paper); }
+.legal__body{ max-width:760px; }
+.legal__intro{ font-size:1.12rem; color:var(--ink); }
+.legal h2{
+  font-size:clamp(1.35rem,2.2vw,1.7rem); margin:2.6rem 0 .8rem;
+  padding-top:1.6rem; border-top:1px solid var(--line);
+}
+.legal h2:first-of-type{ margin-top:2rem; }
+.legal h3{ font-size:1.08rem; color:var(--olive); margin:1.8rem 0 .5rem; }
+.legal p, .legal li{ color:var(--muted); }
+.legal strong{ color:var(--ink); }
+.legal ul{ margin:0 0 1rem; padding-left:1.3rem; }
+.legal li{ margin-bottom:.5rem; }
+.legal a{ color:var(--olive); text-decoration:underline; text-underline-offset:2px; }
+.legal a:hover{ color:var(--brass); }
+.legal__contact{ list-style:none; padding-left:0; }
+
+/* Unresolved details are marked visibly on purpose, so this page
+   cannot be published looking finished while gaps remain. */
+.legal__todo{
+  background:rgba(168,137,79,.16); border-bottom:2px dashed var(--brass);
+  color:var(--ink); font-weight:600; padding:.1em .35em; border-radius:2px;
+}
+
+/* ---------- 17j. PROJECTS PAGE ---------- */
+.page-hero--projects .page-hero__media{
+  background-image:url("../images/slate-battens.jpg");
+  background-position:center 55%;
+}
+
+.gallery{
+  list-style:none; margin:0; padding:0;
+  display:grid; gap:1rem; grid-auto-flow:dense;
+}
+/* Fixed row height + spans, so mixed tile sizes still tile perfectly
+   instead of leaving ragged rows. */
+@media (min-width:640px){
+  .gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:150px; }
+  .gallery__item{ grid-row:span 2; }
+  .gallery__item--wide{ grid-column:span 2; grid-row:span 2; }
+}
+@media (min-width:980px){
+  .gallery{ grid-template-columns:repeat(3,1fr); grid-auto-rows:170px; gap:1.25rem; }
+}
+
+.gallery__item{
+  position:relative; overflow:hidden; border-radius:var(--radius);
+  background:var(--olive-darker); box-shadow:var(--shadow);
+}
+.gallery__item img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .6s var(--ease);
+}
+.gallery__item:hover img{ transform:scale(1.06); }
+
+/* Caption sits on the photo under a scrim rather than in a bar below,
+   so the images run edge to edge and the grid reads as one block. */
+.gallery__caption{
+  position:absolute; left:0; right:0; bottom:0; margin:0;
+  padding:2.5rem 1.1rem .9rem;
+  color:#fff; font-size:.95rem; font-weight:700; letter-spacing:-.01em;
+  text-shadow:0 1px 12px rgba(0,0,0,.5);
+  background:linear-gradient(to top, rgba(20,22,14,.88) 0%, rgba(20,22,14,.55) 45%, rgba(20,22,14,0) 100%);
+}
+
+/* On a single column the tall/wide variants have nothing to span */
+@media (max-width:639px){
+  .gallery__item img{ aspect-ratio:4/3; }
 }

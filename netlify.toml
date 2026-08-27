@@ -4,13 +4,36 @@
   publish = "."
   command = ""
 
-# Long-cache the fingerprint-safe static assets (fonts/images).
+# Fonts never change, so they can be cached hard.
 [[headers]]
   for = "/assets/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Images are NOT fingerprinted — the filenames stay the same when a photo is
+# swapped. A 30-day cache meant anyone who had visited kept seeing the old
+# photo for a month after a change. One day, with revalidation, so a swap
+# shows up quickly. If you replace a photo, give the file a new name too.
 [[headers]]
   for = "/assets/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+# The repo root is the publish directory, so the internal notes were being
+# served as public pages — /PLACEHOLDERS.md returned 200 on the live site.
+# Keep the docs in the repo, off the web.
+#
+# NOTE: these must be listed one by one. Netlify only supports a splat at the
+# END of a path, so "/*.md" matches nothing and fails silently. If you add
+# another markdown file at the repo root, add a rule for it here too.
+[[redirects]]
+  from = "/PLACEHOLDERS.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+  force = true

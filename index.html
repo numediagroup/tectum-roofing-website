@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="assets/images/brand/favicon.png">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260827">
 
   <!-- Preload primary font weight for faster first paint -->
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -19,10 +19,10 @@
 
   <!-- ============================================================
        HEADER / NAV
-       Nav links mirror the reference site. "Domestic Roofing",
-       "Commercial Roofing" and "Inspections & Surveys" are future
-       pages — they currently point to the services section.
-       PLACEHOLDER: nav links for future inner pages (see list)
+       "Domestic Roofing" links to domestic-roofing.html, which covers
+       all 8 services (no separate page per service, by design). The
+       service cards below link straight to their section.
+       All four nav items now resolve to real pages.
   ============================================================ -->
   <header class="site-header" id="siteHeader">
     <div class="wrap header__inner">
@@ -33,10 +33,12 @@
 
       <nav class="nav" id="primaryNav" aria-label="Primary">
         <a href="#top" class="nav__link">Home</a>
-        <a href="#services" class="nav__link">Domestic Roofing</a>
-        <a href="#services" class="nav__link">Commercial Roofing</a>
-        <a href="#services" class="nav__link">Inspections &amp; Surveys</a>
-        <a href="#contact" class="nav__link nav__link--cta">Contact Us</a>
+
+        <a href="domestic-roofing.html" class="nav__link">Domestic Roofing</a>
+        <a href="commercial-roofing.html" class="nav__link">Commercial Roofing</a>
+        <a href="inspections-surveys.html" class="nav__link">Inspections &amp; Surveys</a>
+        <a href="previous-projects.html" class="nav__link">Previous Projects</a>
+        <a href="contact.html" class="nav__link nav__link--cta">Contact Us</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
@@ -79,7 +81,7 @@
           <a href="#contact" class="btn btn--primary reveal">Get in Touch</a>
         </div>
         <div class="intro__media reveal">
-          <img src="assets/images/intro-roof-repair.jpg" alt="Tectum Roofing re-laying a clay tile roof, with scaffolding in place" width="1000" height="662" loading="lazy">
+          <img src="assets/images/slate-battens.jpg" alt="Battens being fixed out across a slate roof" width="1100" height="1467" loading="lazy">
         </div>
       </div>
     </section>
@@ -106,36 +108,52 @@
 
         <ul class="cards cards--4" role="list">
           <li class="card reveal">
-            <div class="card__media"><img src="assets/images/services/Felt-Roofing.jpg" alt="Felt roofing" width="680" height="510" loading="lazy"></div>
+            <a class="card__link" href="domestic-roofing.html#felt-roofing">
+            <div class="card__media"><img src="assets/images/services/felt-flat-roof.jpg" alt="Felt flat roof with rooflights" width="800" height="1067" loading="lazy"></div>
             <h3 class="card__title">Felt Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
-            <div class="card__media"><img src="assets/images/services/GRP-Roofing.jpg" alt="GRP fibreglass roofing" width="680" height="510" loading="lazy"></div>
+            <a class="card__link" href="domestic-roofing.html#grp-roofing">
+            <div class="card__media"><img src="assets/images/services/grp-fibreglass.jpg" alt="GRP fibreglass flat roof" width="800" height="1067" loading="lazy"></div>
             <h3 class="card__title">GRP Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
-            <div class="card__media"><img src="assets/images/services/Leadwork.jpg" alt="Roof leadwork" width="680" height="510" loading="lazy"></div>
+            <a class="card__link" href="domestic-roofing.html#leadwork">
+            <div class="card__media"><img src="assets/images/services/lead-dormer.jpg" alt="Lead-clad dormer window" width="800" height="1102" loading="lazy"></div>
             <h3 class="card__title">Leadwork</h3>
+            </a>
           </li>
           <li class="card reveal">
-            <div class="card__media"><img src="assets/images/services/Re-Roofing.jpg" alt="Re-roofing" width="680" height="510" loading="lazy"></div>
+            <a class="card__link" href="domestic-roofing.html#re-roofing">
+            <div class="card__media"><img src="assets/images/services/re-roof-aerial.jpg" alt="A property mid re-roof, seen from above" width="800" height="450" loading="lazy"></div>
             <h3 class="card__title">Re-Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
-            <div class="card__media"><img src="assets/images/services/Roof-Tiling.jpg" alt="Roof tiling" width="680" height="510" loading="lazy"></div>
+            <a class="card__link" href="domestic-roofing.html#roof-tiling">
+            <div class="card__media"><img src="assets/images/services/new-tiles.jpg" alt="Newly laid roof tiles" width="800" height="1067" loading="lazy"></div>
             <h3 class="card__title">Roof Tiling</h3>
+            </a>
           </li>
           <li class="card reveal">
-            <div class="card__media"><img src="assets/images/services/Rubber-Roofing.jpg" alt="Rubber roofing" width="680" height="510" loading="lazy"></div>
+            <a class="card__link" href="domestic-roofing.html#rubber-roofing">
+            <div class="card__media"><img src="assets/images/services/epdm-rooflights.jpg" alt="Rubber EPDM flat roof with rooflights" width="800" height="1067" loading="lazy"></div>
             <h3 class="card__title">Rubber Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
-            <div class="card__media"><img src="assets/images/services/Slate-Roofing.jpg" alt="Slate roofing" width="680" height="510" loading="lazy"></div>
+            <a class="card__link" href="domestic-roofing.html#slate-roofing">
+            <div class="card__media"><img src="assets/images/services/slate-chimneys.jpg" alt="Slate roof with chimney stacks" width="800" height="600" loading="lazy"></div>
             <h3 class="card__title">Slate Roofing</h3>
+            </a>
           </li>
           <li class="card reveal">
-            <div class="card__media"><img src="assets/images/services/uPVC-Plastic-Roofing.jpg" alt="uPVC and plastic roofing" width="680" height="510" loading="lazy"></div>
+            <a class="card__link" href="domestic-roofing.html#upvc-plastic">
+            <div class="card__media"><img src="assets/images/services/upvc-roofline.jpg" alt="White uPVC roofline and fascias" width="800" height="1067" loading="lazy"></div>
             <h3 class="card__title">uPVC &amp; Plastic Roofing</h3>
+            </a>
           </li>
         </ul>
       </div>
@@ -150,7 +168,7 @@
     <section class="section apart" aria-labelledby="apart-heading">
       <div class="wrap grid-2 grid-2--media-text">
         <div class="apart__media reveal">
-          <img src="assets/images/about.jpg" alt="Tectum Roofing team at work on a completed roof" width="900" height="675" loading="lazy">
+          <img src="assets/images/new-tile-gable.jpg" alt="A newly tiled roof and gable end" width="1100" height="1467" loading="lazy">
         </div>
         <div class="apart__text">
           <p class="eyebrow reveal">Why Tectum</p>
@@ -182,30 +200,30 @@
           <p class="eyebrow reveal">Our Work</p>
           <h2 id="projects-heading" class="reveal">View Our Most Recent Projects</h2>
           <p class="section-head__lead reveal">Take a look at some of our latest roofing projects completed for domestic and commercial clients.</p>
-          <a href="#contact" class="btn btn--primary reveal">View Our Projects</a>
+          <a href="previous-projects.html" class="btn btn--primary reveal">View Our Projects</a>
         </div>
 
         <ul class="cards cards--4" role="list">
           <li class="project reveal">
-            <div class="project__media"><img src="assets/images/projects/Tiling.jpg" alt="Completed roof tiling project" width="820" height="615" loading="lazy"></div>
+            <div class="project__media"><img src="assets/images/projects/tiling-project.jpg" alt="Completed roof tiling project" width="850" height="1133" loading="lazy"></div>
             <h3 class="project__title">Tiling Project</h3>
             <!-- PLACEHOLDER: project description -->
             <p class="project__desc">Full roof tiling completed for a domestic property.</p>
           </li>
           <li class="project reveal">
-            <div class="project__media"><img src="assets/images/projects/Felt-Roofing.jpg" alt="Completed felt roofing project" width="820" height="615" loading="lazy"></div>
+            <div class="project__media"><img src="assets/images/projects/felt-project.jpg" alt="Completed felt roofing project" width="850" height="478" loading="lazy"></div>
             <h3 class="project__title">Felt Roofing</h3>
             <!-- PLACEHOLDER: project description -->
             <p class="project__desc">Durable felt flat-roof installation and finishing.</p>
           </li>
           <li class="project reveal">
-            <div class="project__media"><img src="assets/images/projects/New-Roofing.jpg" alt="New roof installation project" width="820" height="615" loading="lazy"></div>
+            <div class="project__media"><img src="assets/images/projects/new-roof-project.jpg" alt="New roof installation project" width="850" height="478" loading="lazy"></div>
             <h3 class="project__title">New Roofing</h3>
             <!-- PLACEHOLDER: project description -->
             <p class="project__desc">Complete new roof build from structure to finish.</p>
           </li>
           <li class="project reveal">
-            <div class="project__media"><img src="assets/images/projects/Roof-Repairs.jpg" alt="Roof repairs project" width="820" height="615" loading="lazy"></div>
+            <div class="project__media"><img src="assets/images/projects/roof-repairs-project.jpg" alt="Roof repairs project" width="850" height="1133" loading="lazy"></div>
             <h3 class="project__title">Roof Repairs</h3>
             <!-- PLACEHOLDER: project description -->
             <p class="project__desc">Targeted repairs restoring a weather-tight roof.</p>
@@ -224,7 +242,7 @@
           <h2 id="contact-heading" class="reveal">Contact Us Today</h2>
           <p class="reveal">Get in touch with Tectum Roofing today to discuss your roofing requirements. Whether you need repairs, maintenance, or a full roof installation, our experienced team is on hand to offer honest advice and reliable solutions. Contact us to arrange an inspection or request a no-obligation quote.</p>
           <ul class="contact__details reveal" role="list">
-            <li><span>Area</span> Surrey, South London &amp; Surrounding Areas</li>
+            <li><span>Area</span> London, Surrey, Sussex &amp; Surrounding Areas</li>
             <li><span>Phone</span> <a href="tel:+441372613023">01372 613023</a></li>
             <li><span>WhatsApp</span> <a href="https://wa.me/447762204033" target="_blank" rel="noopener">07762 204033</a></li>
             <li><span>Email</span> <a href="mailto:info@tectum-roofing.co.uk">info@tectum-roofing.co.uk</a></li>
@@ -277,7 +295,7 @@
   </main>
 
   <!-- ============================================================
-       FOOTER
+       FOOTER  (identical on every page)
   ============================================================ -->
   <footer class="site-footer">
     <div class="wrap footer__grid">
@@ -298,18 +316,33 @@
       <nav class="footer__col" aria-label="Quick links">
         <h4>Quick Links</h4>
         <ul role="list">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#services">Domestic Roofing</a></li>
-          <li><a href="#services">Commercial Roofing</a></li>
-          <li><a href="#services">Inspections &amp; Surveys</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="domestic-roofing.html">Domestic Roofing</a></li>
+          <li><a href="commercial-roofing.html">Commercial Roofing</a></li>
+          <li><a href="inspections-surveys.html">Inspections &amp; Surveys</a></li>
+          <li><a href="previous-projects.html">Previous Projects</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Domestic roofing services">
+        <h4>Domestic Roofing</h4>
+        <ul role="list">
+          <li><a href="domestic-roofing.html#felt-roofing">Felt Roofing</a></li>
+          <li><a href="domestic-roofing.html#slate-roofing">Slate Roofs</a></li>
+          <li><a href="domestic-roofing.html#grp-roofing">GRP Roofs</a></li>
+          <li><a href="domestic-roofing.html#roof-tiling">Tiled Roofs</a></li>
+          <li><a href="domestic-roofing.html#rubber-roofing">Rubber Roofing</a></li>
+          <li><a href="domestic-roofing.html#re-roofing">Re-Roofs</a></li>
+          <li><a href="domestic-roofing.html#leadwork">Leadwork</a></li>
+          <li><a href="domestic-roofing.html#upvc-plastic">uPVC &amp; Plastic Roofing</a></li>
         </ul>
       </nav>
 
       <div class="footer__col">
         <h4>Get In Touch</h4>
         <ul role="list" class="footer__contact">
-          <li>Surrey, South London &amp; Surrounding Areas</li>
+          <li>London, Surrey, Sussex &amp; Surrounding Areas</li>
           <li>Tel: <a href="tel:+441372613023">01372 613023</a></li>
           <li>WhatsApp: <a href="https://wa.me/447762204033" target="_blank" rel="noopener">07762 204033</a></li>
           <li><a href="mailto:info@tectum-roofing.co.uk">info@tectum-roofing.co.uk</a></li>
@@ -318,8 +351,9 @@
     </div>
 
     <div class="footer__bar">
-      <div class="wrap">
+      <div class="wrap footer__bar-inner">
         <p>&copy; <span id="year">2026</span> Tectum Roofing. All Rights Reserved.</p>
+        <p class="footer__legal"><a href="privacy-policy.html">Privacy Policy</a></p>
       </div>
     </div>
   </footer>
@@ -333,6 +367,6 @@
     <span class="wa-float__label">WhatsApp us</span>
   </a>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=20260827" defer></script>
 </body>
 </html>
