@@ -205,6 +205,22 @@ felt being laid, sitting in the homepage About section in place of a photo.
 
 ---
 
+## Homepage banner
+
+`hero-roof-aerial.jpg` — the client picked this one in their feedback email:
+an aerial of a hipped tile roof with the crew on it and scaffolding all round.
+
+Supplied as `image001.png` at 1280x720 with a 79px black letterbox bar along
+the bottom, which is cropped off — the working file is 1280x641. At 2:1 it
+almost exactly matches the hero box (1.93:1), so barely anything is cropped on
+desktop; on mobile it centre-crops and still keeps both roofers in frame.
+
+⚠️ It is 1280px wide, where the other banners are 1500px. On a large display it
+upscales slightly. If the client has the original at full resolution it is
+worth swapping in.
+
+---
+
 ## Images
 
 All photography is client-supplied (Aug 2026), resized to roughly twice its
