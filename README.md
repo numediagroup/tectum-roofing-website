@@ -38,7 +38,7 @@ Press `Ctrl + C` in Terminal to stop the server.
    two calls-to-action (Get a Quote / Our Services).
 3. **About** — "Roofing Professionals in South London…" intro text + image.
 4. **Brand band** — a full-width roofing photo divider.
-5. **Our Core Services** — the 8 services (Felt, GRP, Leadwork, Re-Roofing, Roof
+5. **Our Core Services** — the 8 services (Felt, GRP, Leadwork, New Roofing, Roof
    Tiling, Rubber, Slate, uPVC & Plastic), each with a real photo.
 6. **What Sets Our Roofing Work Apart** — image + the two feature points.
 7. **View Our Most Recent Projects** — 4 project cards.
@@ -56,7 +56,7 @@ there is deliberately **no separate page per service**.
   nav is flat — no dropdown.
 - Each section is three paragraphs of prose beside its photo, then four key
   points as a two-column tick list.
-- **Two CTA bands** break the page up (after GRP and after Re-Roofs), and the
+- **Two CTA bands** break the page up (after GRP and after New Roofing), and the
   page ends with its own **Request a Quote** form — the same form as the
   homepage, so it behaves identically.
 - The homepage service cards link through to their matching section, and both
@@ -71,7 +71,7 @@ Section order and anchors:
 | 3 | GRP (Fibreglass Roofing) | `#grp-roofing` |
 | 4 | Tiling | `#roof-tiling` |
 | 5 | Rubber Roofing (EPDM) | `#rubber-roofing` |
-| 6 | Re-Roofs | `#re-roofing` |
+| 6 | New Roofing | `#new-roofing` |
 | 7 | Lead Roofing & Leadwork | `#leadwork` |
 | 8 | uPVC & Plastics | `#upvc-plastic` |
 
