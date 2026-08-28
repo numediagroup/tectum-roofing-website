@@ -49,10 +49,10 @@ Press `Ctrl + C` in Terminal to stop the server.
 
 ## The Domestic Roofing page (`domestic-roofing.html`)
 
-The site's first inner page. One page covering all eight domestic services —
+The site's first inner page. One page covering all seven domestic services —
 there is deliberately **no separate page per service**.
 
-- A **Jump to** row under the banner links to all eight sections. The header
+- A **Jump to** row under the banner links to all seven sections. The header
   nav is flat — no dropdown.
 - Each section is three paragraphs of prose beside its photo, then four key
   points as a two-column tick list.
@@ -68,12 +68,16 @@ Section order and anchors:
 |---|---------|--------|
 | 1 | Felt Roofing | `#felt-roofing` |
 | 2 | Slating | `#slate-roofing` |
-| 3 | GRP (Fibreglass Roofing) | `#grp-roofing` |
-| 4 | Tiling | `#roof-tiling` |
-| 5 | Rubber Roofing (EPDM) | `#rubber-roofing` |
-| 6 | New Roofing | `#new-roofing` |
-| 7 | Lead Roofing & Leadwork | `#leadwork` |
-| 8 | uPVC & Plastics | `#upvc-plastic` |
+| 3 | Tiling | `#roof-tiling` |
+| 4 | Rubber Roofing (EPDM) | `#rubber-roofing` |
+| 5 | New Roofing | `#new-roofing` |
+| 6 | Lead Roofing & Leadwork | `#leadwork` |
+| 7 | uPVC & Plastics | `#upvc-plastic` |
+
+GRP was removed at the client's request in August 2026 — the section, the
+jump link, the footer entry, the commercial systems chip, every enquiry-form
+option, and all copy mentions. Section numbering and the alternating
+backgrounds were re-sequenced to suit.
 
 ## The Commercial Roofing page (`commercial-roofing.html`)
 
