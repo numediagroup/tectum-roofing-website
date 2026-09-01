@@ -304,6 +304,19 @@ p{ margin:0 0 1rem; }
   margin:1rem 0 0; padding:.85rem 1rem; border-radius:var(--radius);
   background:rgba(168,137,79,.18); border:1px solid var(--brass); color:#f0e6d2; font-size:.92rem;
 }
+/* A failed send has to look different from a successful one */
+.form-note--error{
+  background:rgba(190,72,60,.22); border-color:#c9695c; color:#ffd9d2;
+}
+/* Honeypot: off-screen for bots to find, invisible and unreachable for
+   people. display:none would let some bots skip it. */
+.hp-field{
+  position:absolute !important; left:-9999px !important;
+  width:1px; height:1px; opacity:0; pointer-events:none;
+}
+
+/* The submit button while a message is in flight */
+.contact-form .btn:disabled{ opacity:.65; cursor:progress; transform:none; box-shadow:none; }
 
 /* ---------- 14. FOOTER ---------- */
 .site-footer{ background:var(--olive); color:var(--on-dark); }
@@ -686,4 +699,46 @@ a.contact-card__value:hover{ color:var(--olive); text-decoration:underline; }
 /* On a single column the tall/wide variants have nothing to span */
 @media (max-width:639px){
   .gallery__item img{ aspect-ratio:4/3; }
+}
+
+/* ---------- 17k. COOKIE BANNER ---------- */
+.cookie-banner{
+  position:fixed; left:0; right:0; bottom:0; z-index:70;
+  background:var(--olive-darker); color:var(--on-dark);
+  border-top:3px solid var(--brass);
+  box-shadow:0 -12px 32px -18px rgba(0,0,0,.7);
+  transform:translateY(100%);
+  transition:transform .35s var(--ease);
+}
+.cookie-banner.is-open{ transform:none; }
+
+.cookie-banner__inner{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:1rem 2rem; padding:1.25rem 0;
+}
+.cookie-banner__text{ flex:1 1 30ch; }
+.cookie-banner__title{
+  margin:0 0 .3rem; font-weight:800; font-size:1rem; letter-spacing:-.01em; color:#fff;
+}
+.cookie-banner__text p{ margin:0; font-size:.92rem; color:var(--on-dark-mut); line-height:1.6; }
+.cookie-banner__text a{ color:#fff; text-decoration:underline; text-underline-offset:2px; }
+.cookie-banner__text a:hover{ color:var(--brass); }
+
+/* Accept and Decline are deliberately the same size and weight — making
+   one harder to find than the other is a dark pattern, and not lawful
+   consent. */
+.cookie-banner__actions{ display:flex; flex-wrap:wrap; gap:.75rem; flex:0 0 auto; }
+.cookie-banner__actions .btn{ padding:.7rem 1.6rem; font-size:.92rem; }
+
+/* The WhatsApp button would otherwise sit under the banner */
+body.has-cookie-banner .wa-float{ bottom:calc(22px + 7.5rem); }
+
+@media (max-width:640px){
+  .cookie-banner__inner{ padding:1.1rem 0; }
+  .cookie-banner__actions{ width:100%; }
+  .cookie-banner__actions .btn{ flex:1 1 auto; }
+  body.has-cookie-banner .wa-float{ bottom:calc(16px + 10.5rem); }
+}
+@media (prefers-reduced-motion:reduce){
+  .cookie-banner{ transition:none; }
 }

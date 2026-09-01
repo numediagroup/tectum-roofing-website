@@ -9,8 +9,11 @@
   <!-- Favicon (real asset from client site) -->
   <link rel="icon" type="image/png" href="assets/images/brand/favicon.png">
 
+  <!-- Google Search Console verification (sets no cookies, needs no consent) -->
+  <meta name="google-site-verification" content="BB8Ylq9Z-YSieOImj0Y3-eCYbyY2TJ1yQ7dAXben6pc">
+
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260905">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260909">
 
   <!-- Preload primary font weight for faster first paint -->
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -208,7 +211,7 @@
     <!-- ============================================================
          CONTACT + QUOTE FORM
          Same section as the other pages, so the form behaves the same.
-         PLACEHOLDER: no backend — submitting shows a note only.
+         Posts to Formspree.
     ============================================================ -->
     <section class="section contact" id="quote" aria-labelledby="quote-heading">
       <div class="wrap grid-2 grid-2--contact">
@@ -224,9 +227,16 @@
           </ul>
         </div>
 
-        <!-- Demo form: no backend. Submitting shows a confirmation note only.
-             PLACEHOLDER: form needs a real handler / email endpoint (see list) -->
-        <form class="contact-form reveal" id="quoteForm" novalidate>
+        <!-- Posts to Formspree. Submitted over fetch by main.js so the
+             visitor stays on the page; falls back to a normal POST if
+             JavaScript is unavailable. -->
+        <form class="contact-form reveal" id="quoteForm" novalidate
+              action="https://formspree.io/f/mljejbwz" method="POST">
+          <!-- Hidden fields: _subject labels the email so all five forms are
+               tellable apart, and _gotcha is a honeypot — bots fill it in,
+               people never see it, and Formspree bins anything that has it. -->
+          <input type="hidden" name="_subject" value="Website enquiry — Commercial Roofing">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-field">
           <div class="field">
             <label for="f-name">Name</label>
             <input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Your name">
@@ -342,6 +352,6 @@
     <span class="wa-float__label">WhatsApp us</span>
   </a>
 
-  <script src="assets/js/main.js?v=20260905" defer></script>
+  <script src="assets/js/main.js?v=20260909" defer></script>
 </body>
 </html>

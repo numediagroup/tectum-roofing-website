@@ -260,6 +260,74 @@ sed -i '' 's/?v=[0-9]\{8\}/?v=20260901/g' *.html
 
 ---
 
+## The cookie banner
+
+The site sets **no tracking cookies**, so consent isn't legally required today.
+The banner exists so analytics can be added later without switching it on
+behind people's backs.
+
+- Injected from `main.js`, not pasted into eight pages — one place to edit, and
+  it can't appear on a page where the script failed.
+- The choice is kept in `localStorage` under `tectum-cookie-consent`. That
+  counts as strictly necessary: it exists only to remember the answer.
+- **Accept and Decline are the same size and weight.** Making one harder to
+  find than the other is a dark pattern and isn't lawful consent.
+- A **Cookie settings** link is injected into the footer bar so consent can be
+  withdrawn as easily as it was given.
+
+### GA4
+
+**Live, gated behind consent.** `GA4_MEASUREMENT_ID` in `main.js` is set to
+`G-7QNV25ZXHK`. `gtag.js` loads **only** for visitors who chose Accept;
+declining clears any `_ga` cookies already set. `anonymize_ip` is on.
+
+The measurement ID is deliberately the only thing configured — the standard
+gtag snippet is **not** in any page, because a snippet in the HTML runs before
+the visitor has chosen.
+
+⚠️ **Never paste the gtag snippet into the pages.** Anything in the HTML runs
+before the visitor has chosen, which makes the banner decorative and the
+privacy policy untrue.
+
+### Google Search Console
+
+Verified by meta tag, present in the `<head>` of **every** page:
+
+```html
+<meta name="google-site-verification" content="BB8Ylq9Z-YSieOImj0Y3-eCYbyY2TJ1yQ7dAXben6pc">
+```
+
+It is on every page rather than just the homepage so verification holds
+whichever URL the property is set to. It sets no cookies and needs no consent.
+
+⚠️ **Don't remove it after verification succeeds.** Google re-checks
+periodically and un-verifies the property if the tag disappears.
+
+Still missing for Search Console: `robots.txt` and `sitemap.xml`. Both need the
+final domain baked in, so they are waiting on the domain decision.
+
+---
+
+## The enquiry forms
+
+All five forms (homepage, domestic, commercial, inspections, contact) post to
+one Formspree endpoint: `https://formspree.io/f/mljejbwz`.
+
+- Each carries a hidden `_subject` naming the page it came from, so the five
+  are tellable apart in the inbox.
+- Each has a `_gotcha` honeypot — positioned off-screen rather than
+  `display:none`, which some bots skip.
+- `main.js` submits over `fetch` so the visitor stays on the page and gets an
+  inline confirmation. The submit button disables while sending, and a failure
+  shows a red note with the phone number rather than losing the message
+  silently.
+- The `action` and `method` are real, so with JavaScript off the form still
+  posts — it just lands on Formspree's own confirmation page.
+
+⚠️ If the endpoint ever changes it has to be updated in **all five** pages.
+
+---
+
 ## The footer
 
 Every page carries an **identical** four-column footer: brand, Quick Links,
