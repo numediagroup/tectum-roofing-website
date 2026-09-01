@@ -6,6 +6,7 @@
    - Scroll-reveal for .reveal elements
    - Enquiry form, posted to Formspree over fetch
    - Site video (autoplay unless reduced motion)
+   - Cookie consent banner
    - Auto year in footer
    ============================================================ */
 (function () {
@@ -168,6 +169,100 @@
     } else {
       startVideo();
     }
+  }
+
+  /* ---- Cookie consent ----
+     The site sets no cookies today and loads nothing from third parties,
+     so strictly speaking no consent is needed. This is here so that the
+     moment analytics, a pixel or an embedded map is added, it can be
+     gated behind a real choice rather than switched on silently.
+
+     The banner is injected from here rather than pasted into eight pages:
+     one place to edit, and it can't appear on a page where the script
+     failed to load. The choice is kept in localStorage, which counts as
+     strictly necessary (it exists only to remember the answer). */
+  var CONSENT_KEY = "tectum-cookie-consent";
+
+  var readConsent = function () {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  };
+  var writeConsent = function (value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { /* private mode */ }
+  };
+
+  /* Everything that needs permission goes in here. Nothing does yet —
+     when you add Google Analytics or similar, load it from this function
+     and NOT from the page, or the consent means nothing. */
+  var enableOptionalCookies = function () { /* intentionally empty for now */ };
+
+  var banner = null;
+
+  var hideBanner = function () {
+    if (!banner) { return; }
+    banner.classList.remove("is-open");
+    window.setTimeout(function () {
+      if (banner && banner.parentNode) { banner.parentNode.removeChild(banner); }
+      banner = null;
+      document.body.classList.remove("has-cookie-banner");
+    }, 300);
+  };
+
+  var buildBanner = function () {
+    if (banner) { return; }
+    banner = document.createElement("section");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "region");
+    banner.setAttribute("aria-label", "Cookie notice");
+    banner.innerHTML =
+      '<div class="wrap cookie-banner__inner">' +
+        '<div class="cookie-banner__text">' +
+          '<p class="cookie-banner__title">Cookies on this site</p>' +
+          '<p>We don\u2019t set any tracking cookies at the moment. If we add analytics later, ' +
+             'we\u2019ll only switch it on if you\u2019ve agreed here. ' +
+             '<a href="privacy-policy.html">Read our privacy policy</a>.</p>' +
+        '</div>' +
+        '<div class="cookie-banner__actions">' +
+          '<button type="button" class="btn btn--on-dark" data-consent="granted">Accept</button>' +
+          '<button type="button" class="btn btn--ghost" data-consent="declined">Decline</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(banner);
+    document.body.classList.add("has-cookie-banner");
+
+    banner.addEventListener("click", function (e) {
+      var button = e.target.closest("[data-consent]");
+      if (!button) { return; }
+      var choice = button.getAttribute("data-consent");
+      writeConsent(choice);
+      if (choice === "granted") { enableOptionalCookies(); }
+      hideBanner();
+    });
+
+    // let it paint before animating in
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () { if (banner) { banner.classList.add("is-open"); } });
+    });
+  };
+
+  var consent = readConsent();
+  if (consent === "granted") {
+    enableOptionalCookies();
+  } else if (consent !== "declined") {
+    buildBanner();
+  }
+
+  /* Consent has to be as easy to withdraw as it was to give, so put a
+     control in the footer bar. Injected, because it only works with JS. */
+  var footerBar = document.querySelector(".footer__bar .wrap");
+  if (footerBar) {
+    var reopen = document.createElement("p");
+    reopen.className = "footer__legal";
+    reopen.innerHTML = '<a href="#" class="cookie-settings">Cookie settings</a>';
+    footerBar.appendChild(reopen);
+    reopen.addEventListener("click", function (e) {
+      e.preventDefault();
+      buildBanner();
+    });
   }
 
   /* ---- Footer year ---- */
