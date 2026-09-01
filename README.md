@@ -289,9 +289,22 @@ the visitor has chosen.
 before the visitor has chosen, which makes the banner decorative and the
 privacy policy untrue.
 
-Google Search Console verification is separate and needs no consent — it sets
-no cookies. Verify by DNS TXT record if you can; it covers the whole domain and
-survives redesigns.
+### Google Search Console
+
+Verified by meta tag, present in the `<head>` of **every** page:
+
+```html
+<meta name="google-site-verification" content="BB8Ylq9Z-YSieOImj0Y3-eCYbyY2TJ1yQ7dAXben6pc">
+```
+
+It is on every page rather than just the homepage so verification holds
+whichever URL the property is set to. It sets no cookies and needs no consent.
+
+⚠️ **Don't remove it after verification succeeds.** Google re-checks
+periodically and un-verifies the property if the tag disappears.
+
+Still missing for Search Console: `robots.txt` and `sitemap.xml`. Both need the
+final domain baked in, so they are waiting on the domain decision.
 
 ---
 
