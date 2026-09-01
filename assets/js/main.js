@@ -190,10 +190,48 @@
     try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { /* private mode */ }
   };
 
-  /* Everything that needs permission goes in here. Nothing does yet —
-     when you add Google Analytics or similar, load it from this function
-     and NOT from the page, or the consent means nothing. */
-  var enableOptionalCookies = function () { /* intentionally empty for now */ };
+  /* ---- Google Analytics 4 ----
+     Put the Measurement ID here (looks like "G-XXXXXXXXXX") and analytics
+     switches itself on — but only for visitors who chose Accept. Leave it
+     empty and nothing loads at all, and the banner says so.
+
+     Do NOT paste the gtag snippet into the pages. Anything in the HTML
+     runs before the visitor has chosen, which makes the banner
+     decorative and the privacy policy untrue. */
+  var GA4_MEASUREMENT_ID = "";
+
+  var analyticsConfigured = function () { return GA4_MEASUREMENT_ID !== ""; };
+
+  var enableOptionalCookies = function () {
+    if (!analyticsConfigured() || window.__tectumGaLoaded) { return; }
+    window.__tectumGaLoaded = true;
+
+    var tag = document.createElement("script");
+    tag.async = true;
+    tag.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_MEASUREMENT_ID;
+    document.head.appendChild(tag);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA4_MEASUREMENT_ID, { anonymize_ip: true });
+  };
+
+  /* Withdrawing consent has to actually withdraw it, so clear anything
+     Google already set. The page isn't reloaded, but gtag stops being
+     re-initialised on the next visit. */
+  var clearAnalyticsCookies = function () {
+    var host = location.hostname;
+    var domains = ["", "." + host, host];
+    document.cookie.split(";").forEach(function (entry) {
+      var key = entry.split("=")[0].trim();
+      if (key.indexOf("_ga") !== 0 && key !== "_gid") { return; }
+      domains.forEach(function (d) {
+        document.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" +
+                          (d ? "; domain=" + d : "");
+      });
+    });
+  };
 
   var banner = null;
 
@@ -217,8 +255,11 @@
       '<div class="wrap cookie-banner__inner">' +
         '<div class="cookie-banner__text">' +
           '<p class="cookie-banner__title">Cookies on this site</p>' +
-          '<p>We don\u2019t set any tracking cookies at the moment. If we add analytics later, ' +
-             'we\u2019ll only switch it on if you\u2019ve agreed here. ' +
+          '<p>' + (analyticsConfigured()
+            ? 'We\u2019d like to use Google Analytics to see how people find and use this site. '
+              + 'It only runs if you accept, and it never identifies you personally. '
+            : 'We don\u2019t set any tracking cookies at the moment. If we add analytics later, '
+              + 'we\u2019ll only switch it on if you\u2019ve agreed here. ') +
              '<a href="privacy-policy.html">Read our privacy policy</a>.</p>' +
         '</div>' +
         '<div class="cookie-banner__actions">' +
@@ -234,7 +275,7 @@
       if (!button) { return; }
       var choice = button.getAttribute("data-consent");
       writeConsent(choice);
-      if (choice === "granted") { enableOptionalCookies(); }
+      if (choice === "granted") { enableOptionalCookies(); } else { clearAnalyticsCookies(); }
       hideBanner();
     });
 
