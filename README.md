@@ -275,19 +275,15 @@ behind people's backs.
 - A **Cookie settings** link is injected into the footer bar so consent can be
   withdrawn as easily as it was given.
 
-### Turning GA4 on
+### GA4
 
-Put the Measurement ID into `GA4_MEASUREMENT_ID` near the top of the consent
-block in `main.js`:
+**Live, gated behind consent.** `GA4_MEASUREMENT_ID` in `main.js` is set to
+`G-7QNV25ZXHK`. `gtag.js` loads **only** for visitors who chose Accept;
+declining clears any `_ga` cookies already set. `anonymize_ip` is on.
 
-```js
-var GA4_MEASUREMENT_ID = "G-XXXXXXXXXX";
-```
-
-That is the only change needed. With it set, `gtag.js` loads **only** for
-visitors who chose Accept, and the banner copy switches to naming Google
-Analytics. Left empty, nothing loads and the banner says so. Declining also
-clears any `_ga` cookies Google already set.
+The measurement ID is deliberately the only thing configured — the standard
+gtag snippet is **not** in any page, because a snippet in the HTML runs before
+the visitor has chosen.
 
 ⚠️ **Never paste the gtag snippet into the pages.** Anything in the HTML runs
 before the visitor has chosen, which makes the banner decorative and the

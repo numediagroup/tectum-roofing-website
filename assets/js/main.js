@@ -198,7 +198,7 @@
      Do NOT paste the gtag snippet into the pages. Anything in the HTML
      runs before the visitor has chosen, which makes the banner
      decorative and the privacy policy untrue. */
-  var GA4_MEASUREMENT_ID = "";
+  var GA4_MEASUREMENT_ID = "G-7QNV25ZXHK";
 
   var analyticsConfigured = function () { return GA4_MEASUREMENT_ID !== ""; };
 
