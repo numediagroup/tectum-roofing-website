@@ -260,6 +260,26 @@ sed -i '' 's/?v=[0-9]\{8\}/?v=20260901/g' *.html
 
 ---
 
+## The enquiry forms
+
+All five forms (homepage, domestic, commercial, inspections, contact) post to
+one Formspree endpoint: `https://formspree.io/f/mljejbwz`.
+
+- Each carries a hidden `_subject` naming the page it came from, so the five
+  are tellable apart in the inbox.
+- Each has a `_gotcha` honeypot — positioned off-screen rather than
+  `display:none`, which some bots skip.
+- `main.js` submits over `fetch` so the visitor stays on the page and gets an
+  inline confirmation. The submit button disables while sending, and a failure
+  shows a red note with the phone number rather than losing the message
+  silently.
+- The `action` and `method` are real, so with JavaScript off the form still
+  posts — it just lands on Formspree's own confirmation page.
+
+⚠️ If the endpoint ever changes it has to be updated in **all five** pages.
+
+---
+
 ## The footer
 
 Every page carries an **identical** four-column footer: brand, Quick Links,

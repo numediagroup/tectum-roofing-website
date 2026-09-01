@@ -304,6 +304,19 @@ p{ margin:0 0 1rem; }
   margin:1rem 0 0; padding:.85rem 1rem; border-radius:var(--radius);
   background:rgba(168,137,79,.18); border:1px solid var(--brass); color:#f0e6d2; font-size:.92rem;
 }
+/* A failed send has to look different from a successful one */
+.form-note--error{
+  background:rgba(190,72,60,.22); border-color:#c9695c; color:#ffd9d2;
+}
+/* Honeypot: off-screen for bots to find, invisible and unreachable for
+   people. display:none would let some bots skip it. */
+.hp-field{
+  position:absolute !important; left:-9999px !important;
+  width:1px; height:1px; opacity:0; pointer-events:none;
+}
+
+/* The submit button while a message is in flight */
+.contact-form .btn:disabled{ opacity:.65; cursor:progress; transform:none; box-shadow:none; }
 
 /* ---------- 14. FOOTER ---------- */
 .site-footer{ background:var(--olive); color:var(--on-dark); }

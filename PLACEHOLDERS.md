@@ -14,7 +14,7 @@ marked in the code with a `PLACEHOLDER` comment — search the files for the wor
 | ~~1~~ | ~~Email address~~ | Contact + footer | ✅ RESOLVED — now `info@tectum-roofing.co.uk`. |
 | 2 | **Brand name swap** | `index.html` · throughout | The reference site's body copy said **"Double A Roofing"** everywhere, but the title/logo/favicon said **Tectum Roofing**. I wrote everything as **Tectum Roofing**. Confirm that's correct. |
 | 3 | **Font** | `assets/css/styles.css` · `:root` / `@font-face` | No brand font was in the assets folder, so I used **Manrope** (a clean, professional sans). If Tectum has an official typeface, send it and I'll swap it in. |
-| 4 | **Contact form has no backend** | `index.html` · line 235 · and `assets/js/main.js` · line 60 | Submitting just shows a "demo form" message. Before go-live it needs a real handler (Formspree, Netlify Forms, or an email endpoint). Tell me your preference. |
+| ~~4~~ | ~~Contact form has no backend~~ | all five forms | ✅ RESOLVED — every form posts to Formspree (`mljejbwz`), submitted over fetch so the visitor stays on the page. Each carries a `_subject` naming the page it came from, and a honeypot field for spam. Falls back to a normal POST with JavaScript off. |
 | 5 | **Social media links** | `index.html` · footer · **line 287** | Facebook + Instagram icons currently link to `#` (nowhere). **Send me the real social URLs** (or say if there are none and I'll remove them). |
 | ~~6~~ | ~~Inner-page nav links~~ | `index.html` · header | ✅ RESOLVED — all four nav items now resolve to real pages: `domestic-roofing.html`, `commercial-roofing.html` and `inspections-surveys.html`. |
 

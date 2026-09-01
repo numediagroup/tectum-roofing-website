@@ -4,7 +4,7 @@
    - Mobile nav toggle
    - Sticky-header shadow on scroll
    - Scroll-reveal for .reveal elements
-   - Demo contact-form handler (no backend)
+   - Enquiry form, posted to Formspree over fetch
    - Site video (autoplay unless reduced motion)
    - Auto year in footer
    ============================================================ */
@@ -94,24 +94,54 @@
 
   revealInView();
 
-  /* ---- Demo contact form (no backend) ----
-     PLACEHOLDER: wire this to a real handler (e.g. Formspree,
-     Netlify Forms, or a mailto/endpoint) before going live. */
+  /* ---- Enquiry form (Formspree) ----
+     The form has a real action/method, so it still works with JavaScript
+     off — it just posts and lands on Formspree's own page. With JS we
+     send it over fetch instead, so the visitor stays put and gets an
+     inline confirmation. */
   var form = document.getElementById("quoteForm");
   var note = document.getElementById("formNote");
   if (form && note) {
+    var button = form.querySelector('button[type="submit"]');
+    var buttonText = button ? button.textContent : "";
+
+    var say = function (message, ok) {
+      note.hidden = false;
+      note.textContent = message;
+      note.classList.toggle("form-note--error", !ok);
+      note.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    };
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      note.hidden = false;
-      note.textContent =
-        "Thanks — this is a demo form with no backend connected yet. " +
-        "In the meantime, please call 01372 613023 or message us on WhatsApp at 07762 204033.";
-      form.reset();
-      note.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      // The form carries novalidate, so nothing is shown unless we ask for it
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      if (button) { button.disabled = true; button.textContent = "Sending\u2026"; }
+      note.hidden = true;
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      }).then(function (response) {
+        if (response.ok) {
+          form.reset();
+          say("Thanks — your message has been sent. We'll get back to you shortly. " +
+              "If it's urgent, call 01372 613023 or message us on WhatsApp at 07762 204033.", true);
+        } else {
+          return response.json().then(function (data) {
+            var detail = data && data.errors ? data.errors.map(function (x) { return x.message; }).join(", ") : "";
+            say("Sorry — your message didn't send. " + (detail ? detail + ". " : "") +
+                "Please call 01372 613023 or email info@tectum-roofing.co.uk.", false);
+          });
+        }
+      }).catch(function () {
+        say("Sorry — your message didn't send, which may be a connection problem. " +
+            "Please call 01372 613023 or email info@tectum-roofing.co.uk.", false);
+      }).then(function () {
+        if (button) { button.disabled = false; button.textContent = buttonText; }
+      });
     });
   }
 
