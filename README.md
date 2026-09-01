@@ -260,6 +260,28 @@ sed -i '' 's/?v=[0-9]\{8\}/?v=20260901/g' *.html
 
 ---
 
+## The cookie banner
+
+The site sets **no tracking cookies**, so consent isn't legally required today.
+The banner exists so analytics can be added later without switching it on
+behind people's backs.
+
+- Injected from `main.js`, not pasted into eight pages — one place to edit, and
+  it can't appear on a page where the script failed.
+- The choice is kept in `localStorage` under `tectum-cookie-consent`. That
+  counts as strictly necessary: it exists only to remember the answer.
+- **Accept and Decline are the same size and weight.** Making one harder to
+  find than the other is a dark pattern and isn't lawful consent.
+- A **Cookie settings** link is injected into the footer bar so consent can be
+  withdrawn as easily as it was given.
+
+⚠️ **When you add analytics, load it from `enableOptionalCookies()` in
+`main.js` — not from the page.** Anything added directly to the HTML runs
+regardless of what the visitor chose, which makes the banner meaningless and
+the privacy policy untrue.
+
+---
+
 ## The enquiry forms
 
 All five forms (homepage, domestic, commercial, inspections, contact) post to
